@@ -7,7 +7,6 @@ import { AdvertisementComponent } from './advertisement/advertisement.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponentComponent },
   { path: 'dashboard', component: DashboardComponentComponent },
   { path: 'ads', component:AdvertisementComponent},
   { path: '**', component: NotFoundComponent }
