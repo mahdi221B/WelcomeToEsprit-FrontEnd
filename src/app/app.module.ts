@@ -8,6 +8,10 @@ import { NavBarComponentComponent } from './nav-bar-component/nav-bar-component.
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { DashboardComponentComponent } from './dashboard-component/dashboard-component.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AdvertisementComponent } from './advertisement/advertisement.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +20,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NavBarComponentComponent,
     HomeComponentComponent,
     DashboardComponentComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AdvertisementComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
