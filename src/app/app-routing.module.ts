@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'ads', component:AdvertisementComponent},
   { path: '**', component: NotFoundComponent }
 ];
-
+//
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
