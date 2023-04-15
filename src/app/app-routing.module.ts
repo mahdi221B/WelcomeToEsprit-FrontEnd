@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponentComponent },
   { path: 'ads', component:AdvertisementComponent},
   { path: '**', component: NotFoundComponent }
+  
 ];
 //
 
