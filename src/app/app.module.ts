@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AdvertisementComponent } from './advertisement/advertisement.component';
 import { FooterComponent } from './footer/footer.component';
+import { AddAdvertisementComponent } from './add-advertisement/add-advertisement.component';
+import { DetailAdvertisementComponent } from './detail-advertisement/detail-advertisement.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FooterComponent } from './footer/footer.component';
     DashboardComponentComponent,
     NotFoundComponent,
     AdvertisementComponent,
-    FooterComponent
+    FooterComponent,
+    AddAdvertisementComponent,
+    DetailAdvertisementComponent
   ],
   imports: [
     BrowserModule,

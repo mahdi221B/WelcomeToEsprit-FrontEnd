@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <p class="card-title flex-grow-1">Advertisements : {{ad.title}} details</p>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="table-responsive">
+              <table class="display expandable-table" style="width:100%">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Image</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ ad.id }}</td>
+                    <td>{{ ad.title }}</td>
+                    <td>{{ ad.startDate }}</td>
+                    <td>{{ ad.endDate }}</td>
+                    <td>{{ ad.image }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

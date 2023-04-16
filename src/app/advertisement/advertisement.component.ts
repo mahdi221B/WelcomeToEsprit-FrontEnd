@@ -11,17 +11,26 @@ import { Advertisement } from '../model/Advertisement';
 export class AdvertisementComponent implements OnInit{
 
   listAds!:Advertisement[];
+  ad!: Advertisement;
 
   constructor(private advertisementService: AdvertisementServiceService,private route:Router) { }
+
   ngOnInit(): void {
-    this.advertisementService.getAllAdvertisements().subscribe({next:(data) => 
+    this.advertisementService.getAllAdvertisements().subscribe({
+      next:(data) => 
       this.listAds= data
     });
   }
 
   delete(id: number){
     this.advertisementService.deleteAdvertisement(id).subscribe({
-         next : () => this.listAds = this.listAds.filter((p)=>p.id != id)
+      next:() => 
+      this.listAds = this.listAds.filter((p)=>p.id != id)
     })
   }
+
+  detail(id: number) {
+    this.route.navigateByUrl(`/ads/${id}`);
+  }
+  
 }
