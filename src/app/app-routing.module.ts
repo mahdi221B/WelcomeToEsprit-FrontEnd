@@ -11,8 +11,9 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponentComponent },
   { path: 'ads', component:AdvertisementComponent},
-  { path: 'ads/:id', component:DetailAdvertisementComponent},
   { path: 'ads/add', component:AddAdvertisementComponent},
+  { path: 'ads/update/:id', component:AddAdvertisementComponent},
+  { path: 'ads/:id', component:DetailAdvertisementComponent},
   { path: '**', component: NotFoundComponent }
 ];
 

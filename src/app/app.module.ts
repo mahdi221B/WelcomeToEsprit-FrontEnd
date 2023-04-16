@@ -14,6 +14,9 @@ import { AdvertisementComponent } from './advertisement/advertisement.component'
 import { FooterComponent } from './footer/footer.component';
 import { AddAdvertisementComponent } from './add-advertisement/add-advertisement.component';
 import { DetailAdvertisementComponent } from './detail-advertisement/detail-advertisement.component';
+import { UpdateAdvertisementComponent } from './update-advertisement/update-advertisement.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +29,15 @@ import { DetailAdvertisementComponent } from './detail-advertisement/detail-adve
     AdvertisementComponent,
     FooterComponent,
     AddAdvertisementComponent,
-    DetailAdvertisementComponent
+    DetailAdvertisementComponent,
+    UpdateAdvertisementComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

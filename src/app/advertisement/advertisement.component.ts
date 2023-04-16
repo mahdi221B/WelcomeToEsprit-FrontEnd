@@ -12,7 +12,7 @@ export class AdvertisementComponent implements OnInit{
 
   listAds!:Advertisement[];
   ad!: Advertisement;
-
+  currentPage = 1;
   constructor(private advertisementService: AdvertisementServiceService,private route:Router) { }
 
   ngOnInit(): void {
@@ -31,6 +31,9 @@ export class AdvertisementComponent implements OnInit{
 
   detail(id: number) {
     this.route.navigateByUrl(`/ads/${id}`);
+  }
+  update(id: number) {
+    this.route.navigateByUrl(`/ads/update/${id}`);
   }
   
 }
