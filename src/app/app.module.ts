@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser'
+
 import { AppComponent } from './app.component';
 import { SideBarComponentComponent } from './side-bar-component/side-bar-component.component';
 import { NavBarComponentComponent } from './nav-bar-component/nav-bar-component.component';
@@ -12,9 +13,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AdvertisementComponent } from './advertisement/advertisement.component';
 import { FooterComponent } from './footer/footer.component';
+import { NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AppEventComponent } from './app-event/app-event.component';
+import { TeamComponent } from './team/team.component';
+
+
 
 @NgModule({
   declarations: [
+    AppEventComponent,
     AppComponent,
     SideBarComponentComponent,
     NavBarComponentComponent,
@@ -22,15 +30,23 @@ import { FooterComponent } from './footer/footer.component';
     DashboardComponentComponent,
     NotFoundComponent,
     AdvertisementComponent,
-    FooterComponent
+    FooterComponent,
+    TeamComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+          BrowserModule,
+
+        FormsModule,
+      CommonModule,
+      AppRoutingModule,
+      HttpClientModule
+
+  
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+   schemas: [
+        NO_ERRORS_SCHEMA,
+      ]
 })
 export class AppModule { }

@@ -1,0 +1,61 @@
+<button (click)="createTeams()">Create Teams</button>
+<br><br>  
+<div>
+  <label>Start date:</label>
+  <input type="date" name="startDate" [(ngModel)]="appevent.startDate">
+</div>
+<div>
+  <label>End date:</label>
+  <input type="date" name="endDate" [(ngModel)]="appevent.endDate">
+</div>
+<div>
+  <label>Ceremony start date:</label>
+  <input type="date" name="ceremonyStartDate" [(ngModel)]="appevent.ceremonyStartDate">
+</div>
+<div>
+  <label>Ceremony end date:</label>
+  <input type="date" name="ceremonyEndDate" [(ngModel)]="appevent.ceremonyEndDate">
+</div>
+<button (click)="addEvent()">Add event</button>
+ 
+   <table  class="table">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Username</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let i = index">
+      <td>{{ i +1 }}</td>
+      <td>{{ user.firstName }}</td>
+     <td><ng-container  *ngFor="let r of user.roles" >{{r.roleName}} , </ng-container></td>
+    <td><button> asign </button></td>
+        </tr>
+          </tbody>
+</table>
+    <table  class="table">
+  <thead>
+    <tr>
+      <th>name</th>
+        <th>budget</th>
+      <th>department</th>
+     <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of teams; let i = index">
+      <td>{{ team.name }}</td>
+      <td>{{ team.budget }}</td>
+     <td>{{ team.department }}</td>
+       <td >{{team.noteTeam}} </td>
+
+  
+        
+        
+      </tr>
+    
+      </tbody>
+</table>
+ 
