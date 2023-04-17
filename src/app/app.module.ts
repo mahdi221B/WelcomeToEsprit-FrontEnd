@@ -10,12 +10,12 @@ import { DashboardComponentComponent } from './dashboard-component/dashboard-com
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { AdvertisementComponent } from './advertisement/advertisement.component';
 import { FooterComponent } from './footer/footer.component';
-import { AddAdvertisementComponent } from './add-advertisement/add-advertisement.component';
-import { DetailAdvertisementComponent } from './detail-advertisement/detail-advertisement.component';
-import { UpdateAdvertisementComponent } from './update-advertisement/update-advertisement.component';
+import { AddAdvertisementComponent } from './components/advertisements/add-update-advertisement/add-advertisement.component';
+import { DetailAdvertisementComponent } from './components/advertisements/detail-advertisement/detail-advertisement.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AdvertisementComponent } from './components/advertisements/advertisement/advertisement.component';
+
 
 
 @NgModule({
@@ -26,11 +26,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomeComponentComponent,
     DashboardComponentComponent,
     NotFoundComponent,
-    AdvertisementComponent,
     FooterComponent,
+    AdvertisementComponent,
     AddAdvertisementComponent,
-    DetailAdvertisementComponent,
-    UpdateAdvertisementComponent
+    DetailAdvertisementComponent
   ],
   imports: [
     BrowserModule,

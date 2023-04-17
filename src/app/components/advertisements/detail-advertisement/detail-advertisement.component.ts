@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AdvertisementServiceService } from '../services/advertisement-service.service';
-import { Advertisement } from '../model/Advertisement';
+import { AdvertisementServiceService } from '../../../services/advertisement-service.service';
+import { Advertisement } from '../../../model/Advertisement';
 
 @Component({
   selector: 'app-detail-advertisement',

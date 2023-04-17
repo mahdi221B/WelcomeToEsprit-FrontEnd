@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { DashboardComponentComponent } from './dashboard-component/dashboard-component.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AdvertisementComponent } from './advertisement/advertisement.component';
-import { AddAdvertisementComponent } from './add-advertisement/add-advertisement.component';
-import { DetailAdvertisementComponent } from './detail-advertisement/detail-advertisement.component';
+import { AddAdvertisementComponent } from './components/advertisements/add-update-advertisement/add-advertisement.component';
+import { DetailAdvertisementComponent } from './components/advertisements/detail-advertisement/detail-advertisement.component';
+import { AdvertisementComponent } from './components/advertisements/advertisement/advertisement.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
