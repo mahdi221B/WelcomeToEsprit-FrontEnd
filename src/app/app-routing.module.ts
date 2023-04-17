@@ -8,22 +8,22 @@ import { DetailAdvertisementComponent } from './components/advertisements/detail
 import { AdvertisementComponent } from './components/advertisements/advertisement/advertisement.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-  { path: 'home', component:HomeComponentComponent ,
+  { path: '', redirectTo: 'home/dashborad', pathMatch: 'full' },
+  {
+    path: 'home', component: HomeComponentComponent,
     children: [
       { path: '', redirectTo: 'dashborad', pathMatch: 'full' },
       { path: 'dashborad', component: DashboardComponentComponent },
-      { path: 'ads', component:AdvertisementComponent,
-        children: [
-          { path: 'ads/add', component:AddAdvertisementComponent},
-          { path: 'ads/update/:id', component:AddAdvertisementComponent},
-          { path: 'ads/:id', component:DetailAdvertisementComponent},
-        ]
-      }
+      { path: 'ads', component: AdvertisementComponent},
+      { path: 'ads/add', component: AddAdvertisementComponent },
+      { path: 'update/:id', component: AddAdvertisementComponent },
+      { path: ':id', component: DetailAdvertisementComponent },      
     ]
   },
   { path: '**', component: NotFoundComponent }
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

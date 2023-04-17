@@ -30,10 +30,10 @@ export class AdvertisementComponent implements OnInit{
   }
 
   detail(id: number) {
-    this.route.navigateByUrl(`/ads/${id}`);
+    this.route.navigateByUrl(`/home/ads/${id}`);
   }
   update(id: number) {
-    this.route.navigateByUrl(`/ads/update/${id}`);
+    this.route.navigateByUrl(`/home/ads/update/${id}`);
   }
   
 }
