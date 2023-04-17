@@ -8,12 +8,20 @@ import { DetailAdvertisementComponent } from './components/advertisements/detail
 import { AdvertisementComponent } from './components/advertisements/advertisement/advertisement.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponentComponent },
-  { path: 'ads', component:AdvertisementComponent},
-  { path: 'ads/add', component:AddAdvertisementComponent},
-  { path: 'ads/update/:id', component:AddAdvertisementComponent},
-  { path: 'ads/:id', component:DetailAdvertisementComponent},
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  { path: 'home', component:HomeComponentComponent ,
+    children: [
+      { path: '', redirectTo: 'dashborad', pathMatch: 'full' },
+      { path: 'dashborad', component: DashboardComponentComponent },
+      { path: 'ads', component:AdvertisementComponent,
+        children: [
+          { path: 'ads/add', component:AddAdvertisementComponent},
+          { path: 'ads/update/:id', component:AddAdvertisementComponent},
+          { path: 'ads/:id', component:DetailAdvertisementComponent},
+        ]
+      }
+    ]
+  },
   { path: '**', component: NotFoundComponent }
 ];
 
