@@ -18,35 +18,39 @@ export class AppEventComponent implements OnInit {
 constructor(private appEventService: AppEventService){}
   users!: User[];
   roles!:Role[];
-  teams!:Team[];
   appevent!:AppEvent;
+id!: number;
+user!:User;
 
 
   ngOnInit()  {
     this.appEventService.getUsers()
       .subscribe(users => this.users = users);
-
-this.appEventService.getteam()
-.subscribe(teams=>this.teams=teams);
-      
-      console.log(this.users)
+  console.log(this.users)
+  
     this.appevent= new AppEvent();
+    this.user= new User();
   }
 
 
-createTeams(){
- //this.appEventService.createteams().subscribe((response) =>{
-//console.log(response);
-// });}
-console.log(this.teams)
-}
+
+
 public addEvent(){  
      return this.appEventService.addEvent(this.appevent).subscribe((response) =>{
 console.log(response);
 });}
 
 
-
+ public asigntojury(id:number) {
+  const  ccurrentuser =this.users.find((p)=>{return p.id===id})
+  if (ccurrentuser) {
+  this.appEventService.assignTeacherToJury(ccurrentuser.id,ccurrentuser).subscribe(
+      (response) => {
+        console.log(response);
+       
+      }
+    );}
+  }
 
 
 

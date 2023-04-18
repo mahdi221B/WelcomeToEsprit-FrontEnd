@@ -1,1 +1,27 @@
-<p>team works!</p>
+<button (click)="createTeams()">Create Teams</button>
+<br><br>  
+
+    <table  class="table">
+  <thead>
+    <tr>
+      <th>name</th>
+        <th>budget</th>
+      <th>department</th>
+     <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of teams; let i = index">
+      <td>{{ team.name }}</td>
+      <td>{{ team.budget }}</td>
+     <td>{{ team.department }}</td>
+       <td >{{team.noteTeam}} </td>
+
+  
+        
+        
+      </tr>
+    
+      </tbody>
+</table>
+ 

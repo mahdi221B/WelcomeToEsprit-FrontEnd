@@ -1,5 +1,4 @@
-<button (click)="createTeams()">Create Teams</button>
-<br><br>  
+
 <div>
   <label>Start date:</label>
   <input type="date" name="startDate" [(ngModel)]="appevent.startDate">
@@ -31,31 +30,7 @@
       <td>{{ i +1 }}</td>
       <td>{{ user.firstName }}</td>
      <td><ng-container  *ngFor="let r of user.roles" >{{r.roleName}} , </ng-container></td>
-    <td><button> asign </button></td>
+    <td><button (click)="asigntojury(user.id)"> asign </button></td>
         </tr>
           </tbody>
 </table>
-    <table  class="table">
-  <thead>
-    <tr>
-      <th>name</th>
-        <th>budget</th>
-      <th>department</th>
-     <th>Note</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let team of teams; let i = index">
-      <td>{{ team.name }}</td>
-      <td>{{ team.budget }}</td>
-     <td>{{ team.department }}</td>
-       <td >{{team.noteTeam}} </td>
-
-  
-        
-        
-      </tr>
-    
-      </tbody>
-</table>
- 

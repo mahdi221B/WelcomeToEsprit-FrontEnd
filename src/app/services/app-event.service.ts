@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { Role } from '../model/Role';
 import { AppEventComponent } from '../app-event/app-event.component';
 import { AppEvent } from '../model/AppEvent';
-//mvn spring-boot:run
+//  
 @Injectable({
   providedIn: 'root'
 })
@@ -14,17 +14,12 @@ export class AppEventService {
   users!: User[];
 roles!:Role[];
 appevent!: AppEvent;
+    baseUrl:string="http://localhost:8088/WelcomeToEsprit/AppEvent/";
+
   constructor(private http : HttpClient) { }
 
 
 
-  createteams(){
-return this.http.post('http://localhost:8088/WelcomeToEsprit/AppEvent/createteams',
-{Headers:new HttpHeaders({
-  'content-Type' : 'application/json'
-})});
-
-  } 
 
 
  public getUsers():Observable<any[]> {
@@ -36,11 +31,13 @@ public addEvent(event: AppEvent)  {
    return this.http.post('http://localhost:8088/WelcomeToEsprit/AppEvent/add' , event)}
     
 
-   public getteam():Observable<any[]>{
+public assignTeacherToJury(id: number,value:any):Observable<any>{
+      
+      return this.http.put<any>('http://localhost:8088/WelcomeToEsprit/AppEvent/teachertojury/'+id+'',value );
 
-    return this.http.get<any[]>('http://localhost:8088/WelcomeToEsprit/Team/getall')}
-   }
+}
+
 
   
 
-
+}

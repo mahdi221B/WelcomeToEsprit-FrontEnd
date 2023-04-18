@@ -31,7 +31,7 @@ import { TeamComponent } from './team/team.component';
     NotFoundComponent,
     AdvertisementComponent,
     FooterComponent,
-    TeamComponent
+    TeamComponent,
   ],
   imports: [
           BrowserModule,
