@@ -17,6 +17,8 @@ import { NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppEventComponent } from './app-event/app-event.component';
 import { TeamComponent } from './team/team.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ProjectComponent } from './project/project.component';
 
 
 
@@ -32,6 +34,7 @@ import { TeamComponent } from './team/team.component';
     AdvertisementComponent,
     FooterComponent,
     TeamComponent,
+    ProjectComponent,
   ],
   imports: [
           BrowserModule,
@@ -39,7 +42,8 @@ import { TeamComponent } from './team/team.component';
         FormsModule,
       CommonModule,
       AppRoutingModule,
-      HttpClientModule
+      HttpClientModule,
+      NgxPaginationModule
 
   
   ],

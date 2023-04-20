@@ -15,22 +15,55 @@
   <label>Ceremony end date:</label>
   <input type="date" name="ceremonyEndDate" [(ngModel)]="appevent.ceremonyEndDate">
 </div>
-<button (click)="addEvent()">Add event</button>
+<br><br>
+<button class="btn btn-danger"  (click)="addEvent()">Add event</button>
  
-   <table  class="table">
-  <thead>
-    <tr>
-      <th>Index</th>
-      <th>Username</th>
-      <th>Role</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users; let i = index">
-      <td>{{ i +1 }}</td>
-      <td>{{ user.firstName }}</td>
-     <td><ng-container  *ngFor="let r of user.roles" >{{r.roleName}} , </ng-container></td>
-    <td><button (click)="asigntojury(user.id)"> asign </button></td>
-        </tr>
-          </tbody>
-</table>
+
+  <div class="row">
+        <div class="col-12">
+          <div class="table-responsive">
+            <table class="display expandable-table" style="width:100%">
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Role</th>
+                 <th>Team</th>
+                  <th>Team captain </th>
+
+
+
+                  <th>Actions</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: currentPage }">
+                  
+                  <td>{{ user.firstName }}</td>
+                  <td><ng-container  *ngFor="let r of user.roles" >{{r.roleName}} , </ng-container></td>
+                 <td *ngIf="user.team">{{ user.team.name }}</td>
+                 <td *ngIf="!user.team">only student have team</td>
+                  <td *ngIf="user.profil.teamcaptain"> yes</td>
+                   <td *ngIf="!user.profil.teamcaptain">No</td>
+
+                  <td>
+                    <button type="submit" class="btn btn-danger" (click)="asigntojury(user.id)">asign</button>
+                  </td>
+                 
+                 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+        </div>
+      </div>
+
+<!--
+<div class="d-flex justify-content-center">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"
+    >
+    </pagination-controls>-->

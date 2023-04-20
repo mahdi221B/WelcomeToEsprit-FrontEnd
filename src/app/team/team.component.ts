@@ -13,6 +13,7 @@ import { Location } from '@angular/common';
 export class TeamComponent implements OnInit{
   constructor(private teamService: TeamService ,private location: Location){}
   teams!:Team[];
+    currentPage = 1;
 
   ngOnInit(): void {
     

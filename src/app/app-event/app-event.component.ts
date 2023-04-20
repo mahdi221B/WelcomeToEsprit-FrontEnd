@@ -7,6 +7,7 @@ import { AppEvent } from '../model/AppEvent';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { Team } from '../model/Team';
+import { Profil } from '../model/Profil';
 
 
 @Component({
@@ -18,16 +19,20 @@ export class AppEventComponent implements OnInit {
 constructor(private appEventService: AppEventService){}
   users!: User[];
   roles!:Role[];
+  team!:Team;
+  profil!:Profil;
   appevent!:AppEvent;
 id!: number;
 user!:User;
+  currentPage = 1;
 
 
   ngOnInit()  {
     this.appEventService.getUsers()
       .subscribe(users => this.users = users);
-  console.log(this.users)
-  
+
+
+      console.log(this.users)
     this.appevent= new AppEvent();
     this.user= new User();
   }
@@ -49,15 +54,9 @@ console.log(response);
         console.log(response);
        
       }
-    );}
+    );
   }
 
 
 
-
-
-
-
-
-
-}
+ }}

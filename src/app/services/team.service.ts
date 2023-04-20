@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+//mvn spring-boot:run
+//launcher.exe --disable-web-security --user-data-dir="c:\nocorsbrowserdata"
 @Injectable({
   providedIn: 'root'
 })
