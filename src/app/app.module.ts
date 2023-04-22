@@ -19,6 +19,7 @@ import { AppEventComponent } from './app-event/app-event.component';
 import { TeamComponent } from './team/team.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProjectComponent } from './project/project.component';
+import { MyteamComponent } from './myteam/myteam.component';
 
 
 
@@ -35,6 +36,7 @@ import { ProjectComponent } from './project/project.component';
     FooterComponent,
     TeamComponent,
     ProjectComponent,
+    MyteamComponent,
   ],
   imports: [
           BrowserModule,

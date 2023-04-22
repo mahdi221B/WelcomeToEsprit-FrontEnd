@@ -7,6 +7,7 @@ import { AdvertisementComponent } from './advertisement/advertisement.component'
 import { AppComponent } from './app.component';
 import { AppEventComponent } from './app-event/app-event.component';
 import { TeamComponent } from './team/team.component';
+import { MyteamComponent } from './myteam/myteam.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: 'ads', component:AdvertisementComponent},
   {path :'event', component:AppEventComponent},
     {path :'team', component:TeamComponent},
-
+{path :'Myteam',component:MyteamComponent},
   { path: '**', component: NotFoundComponent }
   
 ];

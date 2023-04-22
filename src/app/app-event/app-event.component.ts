@@ -19,7 +19,7 @@ export class AppEventComponent implements OnInit {
 constructor(private appEventService: AppEventService){}
   users!: User[];
   roles!:Role[];
-  team!:Team;
+  team!:Team; 
   profil!:Profil;
   appevent!:AppEvent;
 id!: number;
@@ -37,12 +37,12 @@ user!:User;
     this.user= new User();
   }
 
-
-
-
 public addEvent(){  
      return this.appEventService.addEvent(this.appevent).subscribe((response) =>{
 console.log(response);
+
+
+
 });}
 
 

@@ -2,8 +2,8 @@ import { Note } from "./Note";
 import { Team } from "./Team";
 
 export class Project {
-  id!: number;
-  video!: string;
+  id!:number;
+  file!: File;
+  desc!: string;
   team!:Team;
-  note!:Note[];
 }

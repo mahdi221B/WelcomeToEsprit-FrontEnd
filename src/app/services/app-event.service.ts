@@ -18,10 +18,6 @@ appevent!: AppEvent;
 
   constructor(private http : HttpClient) { }
 
-
-
-
-
  public getUsers():Observable<any[]> {
     return this.http.get<any[]>('http://localhost:8088/WelcomeToEsprit/get/all/Users')}
 
