@@ -9,9 +9,11 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { DashboardComponentComponent } from './dashboard-component/dashboard-component.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdvertisementComponent } from './advertisement/advertisement.component';
 import { FooterComponent } from './footer/footer.component';
+import { ListOffresComponent } from './components/JobOffer/list-offres/list-offres.component';
+import { AddOfferComponent } from './components/JobOffer/add-offer/add-offer.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,16 @@ import { FooterComponent } from './footer/footer.component';
     DashboardComponentComponent,
     NotFoundComponent,
     AdvertisementComponent,
-    FooterComponent
+    FooterComponent,
+    ListOffresComponent,
+    AddOfferComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

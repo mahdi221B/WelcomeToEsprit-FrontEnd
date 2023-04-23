@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title">Advanced Table</p>
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="display expandable-table" style="width:100%">
+                  <thead>
+                    <tr>
+                      <th>title</th>
+                      <th>specialty</th>
+                      <th>description</th>
+                      <th>requirements</th>
+                      <th>location</th>
+                      <th>date_limite</th>
+                      
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let offer of listOffers">
+                   <tr>
+                    <td>{{offer.title}}</td>
+                    <td>{{offer.specialty}}</td>
+                    <td>{{offer.description}}</td>
+                    <td>{{offer.requirements}}</td>
+                    <td>{{offer.location}}</td>
+                    <td>{{offer.date_limite}}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-success">Success</button>
+                        <button type="button" class="btn btn-outline-danger">Danger</button>
+                    </td>
+                   </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div> 
+      </div>
+  </div>
