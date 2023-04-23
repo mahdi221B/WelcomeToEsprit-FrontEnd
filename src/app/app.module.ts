@@ -26,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ReactComponent } from './components/forum/react/react.component';
 
 
 
@@ -42,7 +43,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     AdvertisementComponent,
     AddAdvertisementComponent,
     DetailAdvertisementComponent,
-    ForumComponent
+    ForumComponent,
+    ReactComponent
   ],
   imports: [
     BrowserModule,

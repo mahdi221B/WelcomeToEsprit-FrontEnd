@@ -1,4 +1,7 @@
+import { React } from "./React";
+
 export class Post {
+  id!:number;
     title!: string;
     content!: string;
     tags!: string;
@@ -7,7 +10,7 @@ export class Post {
     locationName!: string;
     // location!: GeoPoint;
     // comments!: Comment[];
-    // reactions!: React[];
+    reactions!: React[];
     // user!: User;
     // media!: PostMedia[];
   }  
