@@ -15,6 +15,18 @@ import { AddAdvertisementComponent } from './components/advertisements/add-updat
 import { DetailAdvertisementComponent } from './components/advertisements/detail-advertisement/detail-advertisement.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AdvertisementComponent } from './components/advertisements/advertisement/advertisement.component';
+import { ForumComponent } from './components/forum/forum.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 
 
@@ -29,14 +41,25 @@ import { AdvertisementComponent } from './components/advertisements/advertisemen
     FooterComponent,
     AdvertisementComponent,
     AddAdvertisementComponent,
-    DetailAdvertisementComponent
+    DetailAdvertisementComponent,
+    ForumComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatBadgeModule,
+    MatCardModule, 
+    MatInputModule,
+    MatFormFieldModule,
+    MatToolbarModule,
+    ScrollingModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AddAdvertisementComponent } from './components/advertisements/add-update-advertisement/add-advertisement.component';
 import { DetailAdvertisementComponent } from './components/advertisements/detail-advertisement/detail-advertisement.component';
 import { AdvertisementComponent } from './components/advertisements/advertisement/advertisement.component';
+import { ForumComponent } from './components/forum/forum.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home/dashborad', pathMatch: 'full' },
@@ -14,14 +15,23 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashborad', pathMatch: 'full' },
       { path: 'dashborad', component: DashboardComponentComponent },
-      { path: 'ads', component: AdvertisementComponent},
+      { path: 'ads', component: AdvertisementComponent },
       { path: 'ads/add', component: AddAdvertisementComponent },
       { path: 'update/:id', component: AddAdvertisementComponent },
-      { path: ':id', component: DetailAdvertisementComponent },      
+      { path: ':id', component: DetailAdvertisementComponent },
     ]
   },
+  { path: 'forum', component: ForumComponent },
   { path: '**', component: NotFoundComponent }
 ];
+// , {
+//   path: 'forum',
+//   loadChildren: () => import('./components/forum/forum.module').then(m => m.ForumModule)
+// },
+/*The import function is used to dynamically load the module. The then method is used to handle the 
+loaded module's class. In this case, the m parameter represents the loaded module's class, 
+which is ForumModuleModule.*/
+
 
 
 
