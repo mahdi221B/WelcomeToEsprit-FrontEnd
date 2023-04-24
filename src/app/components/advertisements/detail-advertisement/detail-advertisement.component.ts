@@ -10,7 +10,6 @@ import { Advertisement } from '../../../model/Advertisement';
 })
 export class DetailAdvertisementComponent  implements OnInit  {
   id!:number;
-  listAds!:Advertisement[];
   ad!:Advertisement;
 
   constructor(private route:ActivatedRoute,private advertisementService:AdvertisementServiceService) { }

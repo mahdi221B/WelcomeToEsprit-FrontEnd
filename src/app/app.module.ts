@@ -27,7 +27,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ReactComponent } from './components/forum/react/react.component';
-
+import { AddUpdatePostComponent } from './components/posts/add-update-post/add-update-post.component';
+import { PostComponent } from './components/posts/post/post.component';
+import { DetailPostComponent } from './components/posts/detail-post/detail-post.component';
+import { AddUpdateCommentsComponent } from './components/comments/add-update-comments/add-update-comments.component';
+import { CommentsComponent } from './components/comments/comments/comments.component';
 
 
 
@@ -44,7 +48,12 @@ import { ReactComponent } from './components/forum/react/react.component';
     AddAdvertisementComponent,
     DetailAdvertisementComponent,
     ForumComponent,
-    ReactComponent
+    ReactComponent,
+    AddUpdatePostComponent,
+    PostComponent,
+    DetailPostComponent,
+    AddUpdateCommentsComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,

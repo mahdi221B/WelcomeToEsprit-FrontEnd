@@ -6,6 +6,7 @@ import { ReactService } from 'src/app/services/react.service';
 import { React } from 'src/app/model/React';
 
 
+
 @Component({
   selector: 'app-forum',
   templateUrl: './forum.component.html',

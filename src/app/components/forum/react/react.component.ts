@@ -35,7 +35,7 @@ export class ReactComponent implements OnInit, OnDestroy {
   }
   //Give us back the emoji path within the folder
   emojiPath(emoji:string) {
-    return `assets/reactions/${emoji}.svg`
+    return `assets/reactions/${emoji}.png`
   }
   react(val:any) {
     if (this.userReaction === val) {

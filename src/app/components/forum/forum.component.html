@@ -1126,11 +1126,7 @@
                 <!-- content -->
                 <div>
                   <p>{{post.content}}</p>
-                  <img
-                    src="https://source.unsplash.com/random/12"
-                    alt="post image"
-                    class="img-fluid rounded"
-                  />
+                  <!-- <img src="https://source.unsplash.com/random/12" alt="post image" class="img-fluid rounded" /> -->
                 </div>
                 <!-- likes & comments -->
                 <div class="post__comment mt-3 position-relative">
@@ -1147,9 +1143,7 @@
                         <i class="text-danger fab fa-gratipay"></i>
                       <i class="text-warning fas fa-grin-squint"></i>
                     </div>  
-                    <!-- lena -->
-                    <!-- <app-react [itemId]="post.id" [userId]="id"></app-react> -->
-                    <p class="m-0 text-muted fs-7">Phu, Tuan, and {{post.reactions.length}} others</p>
+                    <p class="m-0 text-muted fs-7">Mahdi, Baha and {{post.reactions.length}} others</p>
                   </div>
                   <!-- comments start-->
                   <div class="accordion" id="accordionExample">
@@ -1175,8 +1169,7 @@
                       <hr />
                       <!-- comment & like bar -->
                       <div class="d-flex justify-content-around">
-                        <div
-                          class="
+                        <div class="
                             dropdown-item
                             rounded
                             d-flex
@@ -1184,11 +1177,8 @@
                             align-items-center
                             pointer
                             text-muted
-                            p-1
-                          "
-                        >
-                          <i class="fas fa-thumbs-up me-3"></i>
-                          <p class="m-0">Like</p>
+                            p-1">
+                          <p><app-react [itemId]="post.id" [userId]="id"></app-react></p>
                         </div>
                         <div
                           class="

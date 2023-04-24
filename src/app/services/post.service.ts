@@ -12,8 +12,11 @@ export class PostService {
 
     constructor(private http: HttpClient) { }
 
+    getAllPosts(): Observable<Post[]> {
+      return this.http.get<Post[]>(`${this.baseUrl}/getall`);
+    }
     addPost(post: Post, id: number): Observable<Post> {
-      return this.http.post<Post>(`${this.baseUrl}/addWFiles/${id}`, post);
+      return this.http.post<Post>(`${this.baseUrl}/add/${id}`, post);
     }
     addWPostFiles(post: Post, id: number, files: File[]): Observable<Post> {
       const formData = new FormData();
@@ -23,9 +26,16 @@ export class PostService {
       }
       return this.http.post<Post>(`${this.baseUrl}/addWFiles/${id}`, formData);
     }
-    
+    getPostById(id: number): Observable<Post> {
+      return this.http.get<Post>(`${this.baseUrl}/get/${id}`);
+    }
     getPosts(id: number): Observable<Post[]> {
-      return this.http.get<Post[]>(`${this.baseUrl}/getall`);
-
+      return this.http.get<Post[]>(`${this.baseUrl}/getall`);    
+    }
+    updatePost(post: Post, id: number): Observable<Post> {
+      return this.http.put<Post>(`${this.baseUrl}/update/${id}`, post);
+    }
+    deletePost(id: number): Observable<void> {
+      return this.http.delete<void>(`${this.baseUrl}/delete/${id}`);
     }
 }

@@ -8,8 +8,7 @@ export class Post {
     sentimentScore!: number;
     createdAt!: Date;
     locationName!: string;
-    // location!: GeoPoint;
-    // comments!: Comment[];
+    //location!: GeoPoint;
     reactions!: React[];
     // user!: User;
     // media!: PostMedia[];
