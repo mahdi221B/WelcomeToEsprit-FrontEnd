@@ -20,6 +20,8 @@ export class ReactService {
   addOrUpdate(react: React, idUser: number, idPost: number): Observable<React> {
     return this.http.post<React>(`${this.baseUrl}/addOrUpdate/${idUser}/${idPost}`,React);
   }
+
+
   getPostReacts(idPost: number): Observable<React> {
     return this.http.get<React>(`${this.baseUrl}/get/${idPost}`);
   }

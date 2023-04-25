@@ -1143,7 +1143,7 @@
                         <i class="text-danger fab fa-gratipay"></i>
                       <i class="text-warning fas fa-grin-squint"></i>
                     </div>  
-                    <p class="m-0 text-muted fs-7">Mahdi, Baha and {{post.reactions.length}} others</p>
+                    <p class="m-0 text-muted fs-7">{{post.reactions.length}} People Reacted</p>
                   </div>
                   <!-- comments start-->
                   <div class="accordion" id="accordionExample">
@@ -1163,10 +1163,10 @@
                           aria-expanded="false"
                           aria-controls="collapsePost1"
                         >
-                          <p class="m-0">2 Comments</p>
+                          <p class="m-0">{{post.comments.length}} Comments</p>
                         </div>
                       </h2>
-                      <hr />
+                      <hr/>
                       <!-- comment & like bar -->
                       <div class="d-flex justify-content-around">
                         <div class="
@@ -1195,9 +1195,10 @@
                           data-bs-target="#collapsePost1"
                           aria-expanded="false"
                           aria-controls="collapsePost1"
+                          (click)="showComments(post.id)"
                         >
                           <i class="fas fa-comment-alt me-3"></i>
-                          <p class="m-0">Comment</p>
+                          <p class="m-0" >Comment</p>
                         </div>
                       </div>
                       <!-- comment expand -->
@@ -1205,12 +1206,11 @@
                         id="collapsePost1"
                         class="accordion-collapse collapse"
                         aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionExample"
-                      >
+                        data-bs-parent="#accordionExample">
                         <hr />
                         <div class="accordion-body">
                           <!-- comment 1 -->
-                          <div class="d-flex align-items-center my-1">
+                          <div *ngFor="let comment of listComments" class="d-flex align-items-center my-1">
                             <!-- avatar -->
                             <img
                               src="https://source.unsplash.com/collection/happy-people"
@@ -1270,30 +1270,7 @@
                               </div>
                               <p class="fw-bold m-0">John</p>
                               <p class="m-0 fs-7 bg-gray p-2 rounded">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit.
-                              </p>
-                            </div>
-                          </div>
-                          <!-- comment 2 -->
-                          <div class="d-flex align-items-center my-1">
-                            <!-- avatar -->
-                            <img
-                              src="https://source.unsplash.com/random/2"
-                              alt="avatar"
-                              class="rounded-circle me-2"
-                              style="
-                                width: 38px;
-                                height: 38px;
-                                object-fit: cover;
-                              "
-                            />
-                            <!-- comment text -->
-                            <div class="p-3 rounded comment__input w-100">
-                              <p class="fw-bold m-0">Jerry</p>
-                              <p class="m-0 fs-7 bg-gray p-2 rounded">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit.
+                                {{comment.content}}
                               </p>
                             </div>
                           </div>
@@ -1313,11 +1290,15 @@
                               />
                             </div>
                             <!-- input -->
+                            
                             <input
                               type="text"
                               class="form-control border-0 rounded-pill bg-gray"
                               placeholder="Write a comment"
+                              name="content"
+                              [(ngModel)]="comment.content"
                             />
+                            <button type="submit" (click)="writeComments(post.id)" hidden></button>
                           </form>
                           <!-- end -->
                         </div>

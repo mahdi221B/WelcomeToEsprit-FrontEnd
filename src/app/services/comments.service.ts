@@ -27,6 +27,9 @@ export class CommentsService {
   updateComments(comment: Comments, id: number): Observable<Comments> {
     return this.http.put<Comments>(`${this.baseUrl}/update/${id}`, comment);
   }
+  assignCommentToPost(comment: Comments, idPost: number, idUser: number): Observable<Comments> {
+    return this.http.put<Comments>(`${this.baseUrl}/assignCommentToPost/${idPost}/${idUser}`, comment);
+  }
 
   deleteComments(id:number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/delete/${id}`);
