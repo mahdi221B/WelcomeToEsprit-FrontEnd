@@ -17,5 +17,9 @@ export class Availablity {
     getAvailablit():Observable<Availablity[]>{
         return this.http.get<Availablity[]>(`${this.baseUrl}`);
     }
+    updateAvailablit(id: number, value: any): Observable<Availablity> {
+        return this.http.put<Availablity>(`${this.baseUrl}/${id}`, value);
+      }
+    
 
 }
