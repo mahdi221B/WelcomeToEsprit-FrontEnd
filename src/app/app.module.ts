@@ -10,8 +10,12 @@ import { DashboardComponentComponent } from './dashboard-component/dashboard-com
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { AdvertisementComponent } from './advertisement/advertisement.component';
 import { FooterComponent } from './footer/footer.component';
+import { AddReclamationComponent } from './components/reclamations/add-reclamation/add-reclamation.component';
+import { ReclamationComponent } from './components/reclamations/reclamation/reclamation.component';
+import { UpdateReclamationComponent } from './components/reclamations/update-reclamation/update-reclamation.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -21,14 +25,17 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponentComponent,
     DashboardComponentComponent,
     NotFoundComponent,
-    AdvertisementComponent,
-    FooterComponent
+    FooterComponent,
+    AddReclamationComponent,
+    ReclamationComponent,
+    UpdateReclamationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,28 @@
+<form >
+  <div class="row">
+    <div class="col-md-12 grid-margin">
+      <div class="card rounded">
+        <div class="card-header">
+          <h4 class="card-title">RECLAMATION</h4>
+        </div>
+        <div class="card-body">
+          <div class="form-group text-center">
+              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="Description" [(ngModel)]="reclamation.description" placeholder="Description">
+          </div>
+          <div class="form-group text-center">
+              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="status" [(ngModel)]="reclamation.status" placeholder="status">
+          </div>
+          <div class="form-group text-center">
+              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="type" [(ngModel)]="reclamation.type" placeholder="type">
+          </div>
+          <div class="form-group text-center">
+            <input type="date" class="form-control form-control-sm w-75 mx-auto" name="creationDate" [(ngModel)]="reclamation.creationDate" placeholder="Date début">
+          </div>
+          <div class="form-group text-center">
+              <button type="submit" class="btn btn-danger" (click)="save()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
