@@ -1,5 +1,6 @@
-
+/* 
 export interface IJobOffer {
+    id : string
     specialty: string;
     title?: string;
     description: string;
@@ -9,7 +10,7 @@ export interface IJobOffer {
     date_limite: Date;
 }
 export class JobOffer implements IJobOffer {
-
+    id : string;
     specialty: string;
     title: string;
     description: string;
@@ -25,5 +26,16 @@ export class JobOffer implements IJobOffer {
     this.location=other?.location||'';
     this.title=other?.title||''
 
-   }
+   } 
+}*/
+
+export class JobOffer {
+    idOffre! : number;
+    specialty!: string;
+    title!: string;
+    description!: string;
+    requirements!: string;
+    location!: string;
+
+    date_limite!: Date;
 }

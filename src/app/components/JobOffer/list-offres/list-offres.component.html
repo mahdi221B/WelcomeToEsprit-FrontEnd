@@ -1,3 +1,8 @@
+<button (click)="redirecttoform()" >to form</button>
+<button (click)="displayCondidat()" >Dispaly condidats</button>
+<!-- Button trigger modal -->
+
+
 <div class="row">
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
@@ -28,8 +33,13 @@
                     <td>{{offer.location}}</td>
                     <td>{{offer.date_limite}}</td>
                     <td>
-                        <button type="button" class="btn btn-outline-success">Success</button>
-                        <button type="button" class="btn btn-outline-danger">Danger</button>
+                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter" (click)="getId(offer.idOffre)" >
+                       Edit
+                      </button>
+                      <button type="button" class="btn btn-danger"  (click)="deleteOffre(offer.idOffre)" >
+                        Delete
+                       </button>
+  
                     </td>
                    </tr>
 
@@ -42,3 +52,66 @@
         </div> 
       </div>
   </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <form>
+          <div class="row">
+              <div class="col-md-12 grid-margin">
+                  <div class="card rounded">
+                      <div class="card-header">
+                          <h4 class="card-title">ADD ADS</h4>
+                      </div>
+                      <div class="card-body">
+                        <div class="form-group text-center">
+                            <input type="text" class="form-control form-control-sm w-75 mx-auto" name="title"
+                                [(ngModel)]="offerJob.title" placeholder="Title" required #titleInput>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="text" class="form-control form-control-sm w-75 mx-auto" name="specialty"
+                                [(ngModel)]="offerJob.specialty" placeholder="specialty" required #titleInput>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="text" class="form-control form-control-sm w-75 mx-auto" name="description"
+                                [(ngModel)]="offerJob.description" placeholder="description" required #titleInput>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="text" class="form-control form-control-sm w-75 mx-auto" name="location"
+                                [(ngModel)]="offerJob.location" placeholder="location" required #titleInput>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="text" class="form-control form-control-sm w-75 mx-auto" name="requirements"
+                                [(ngModel)]="offerJob.requirements" placeholder="requirements" required #titleInput>
+                        </div>
+                        <!-- <div *ngIf="titleInput.invalid && (titleInput.dirty || titleInput.touched)" class="alert alert-danger">
+                    <div *ngIf="titleInput.errors?.['required']">
+                        <p class="text-danger">Id is required</p>
+                    </div>
+                    <div *ngIf="titleInput.errors?.['minlength']">
+                        <p class="text-danger">Must be at least 4 characters long</p>
+                    </div>
+                </div> -->
+                        <div class="form-group text-center">
+                            <input type="date" class="form-control form-control-sm w-75 mx-auto" name="startDate"
+                                [(ngModel)]="offerJob.date_limite" placeholder="Date début">
+                        </div>
+            
+      
+                          <div class="form-group text-center"> 
+                      
+                              <button type="submit" class="btn btn-danger"   (click)="UpdateOffer()" >Update</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

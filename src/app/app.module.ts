@@ -14,6 +14,11 @@ import { AdvertisementComponent } from './advertisement/advertisement.component'
 import { FooterComponent } from './footer/footer.component';
 import { ListOffresComponent } from './components/JobOffer/list-offres/list-offres.component';
 import { AddOfferComponent } from './components/JobOffer/add-offer/add-offer.component';
+import { TestComponent } from './components/JobOffer/test/test.component';
+import { ApplicationFormComponent } from './components/application-form/application-form.component';
+import { FrontOfficeComponent } from './components/front-office/front-office.component';
+import { ListeClassifierCondidatsComponent } from './components/liste-classifier-condidats/liste-classifier-condidats.component';
+import { AvailablityComponent } from './components/availablity/availablity.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { AddOfferComponent } from './components/JobOffer/add-offer/add-offer.com
     AdvertisementComponent,
     FooterComponent,
     ListOffresComponent,
-    AddOfferComponent
+    AddOfferComponent,
+    TestComponent,
+    ApplicationFormComponent,
+    FrontOfficeComponent,
+    ListeClassifierCondidatsComponent,
+    AvailablityComponent
   ],
   imports: [
     BrowserModule,

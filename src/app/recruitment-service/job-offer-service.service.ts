@@ -17,7 +17,10 @@ export class JobOfferServiceService {
   createJobOffer(jobOffer: JobOffer): Observable<JobOffer> {
     return this.http.post<JobOffer>(`${this.baseUrl}`, jobOffer);
   }
-
+  
+  getJobOffer(id : number): Observable<JobOffer> {
+    return this.http.get<JobOffer>(`${this.baseUrl}/`+ id);
+  }
   updateJobOffer(id: number, value: any): Observable<JobOffer> {
     return this.http.put<JobOffer>(`${this.baseUrl}/${id}`, value);
   }

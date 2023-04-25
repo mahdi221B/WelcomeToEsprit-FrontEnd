@@ -1,0 +1,41 @@
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title">Advanced Table</p>
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="display expandable-table" style="width:100%">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Experience</th>
+                      <th>Salary</th>
+                      <th>Motivation Letter</th>
+                      <th>Email</th>
+                      <th>Note</th>
+        
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let c of condidats">
+                   <tr>
+                    <td>{{c.name}}</td>
+                    <td>{{c.experience}}</td>
+                    <td>{{c.salary}}</td>
+                    <td>{{c.motivationLetter}}</td>
+                    <td>{{c.email}}</td>
+                    <td>{{c.note}}</td>
+               
+                   </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div> 
+      </div>
+  </div>

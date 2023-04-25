@@ -1,0 +1,50 @@
+<form>
+    <div class="row">
+        <div class="col-md-12 grid-margin">
+            <div class="card rounded">
+                <div class="card-header">
+                    <h4 class="card-title">ADD ADS</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-group text-center">
+                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="title"
+                            placeholder="Title" required #titleInput>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="specialty"
+                             placeholder="specialty" required #titleInput>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="description"
+                            placeholder="description" required #titleInput>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="location"
+                        placeholder="location" required #titleInput>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="requirements"
+                             placeholder="requirements" required #titleInput>
+                    </div>
+                    <!-- <div *ngIf="titleInput.invalid && (titleInput.dirty || titleInput.touched)" class="alert alert-danger">
+                <div *ngIf="titleInput.errors?.['required']">
+                    <p class="text-danger">Id is required</p>
+                </div>
+                <div *ngIf="titleInput.errors?.['minlength']">
+                    <p class="text-danger">Must be at least 4 characters long</p>
+                </div>
+            </div> -->
+                    <div class="form-group text-center">
+                        <input type="date" class="form-control form-control-sm w-75 mx-auto" name="startDate"
+                            placeholder="Date début">
+                    </div>
+
+
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-danger" >Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -12,17 +12,37 @@ export class AddOfferComponent implements OnInit {
   offer:JobOffer=new JobOffer()
   constructor(private jobofferService:JobOfferServiceService,private router:Router){}
   ngOnInit(): void {
+
+
+
+
+
+    
+
+
+
+
+
   }
 
   saveOrUpdate():void{
-  console.log(this.offer);
+ /* console.log(this.offer);
   
     this.jobofferService.createJobOffer(this.offer).subscribe(
       res=>{
         this.router.navigate(['/listoffers'])
       }
-    )
+    )*/
 
+    if (this.offer) {
+      this.jobofferService.createJobOffer(this.offer).subscribe({
+        next:()=>this.router.navigateByUrl('/listoffers')
+      })
+    } else {
+      this.jobofferService.createJobOffer(this.offer).subscribe({
+        next:()=>this.router.navigateByUrl('/listoffers')
+      })
+    }
   }
 
 }
