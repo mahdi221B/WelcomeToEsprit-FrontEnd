@@ -2,12 +2,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Availablity } from '../model/availablity';
 
 @Injectable({
     providedIn: 'root'
   })
   
-export class Availablity {
+export class availablityservice {
 
 
 

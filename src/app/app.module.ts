@@ -19,6 +19,8 @@ import { ApplicationFormComponent } from './components/application-form/applicat
 import { FrontOfficeComponent } from './components/front-office/front-office.component';
 import { ListeClassifierCondidatsComponent } from './components/liste-classifier-condidats/liste-classifier-condidats.component';
 import { AvailablityComponent } from './components/availablity/availablity.component';
+import { ListAvailabtityComponent } from './components/availablity/list-availabtity/list-availabtity.component';
+import { AddAvailabtityComponent } from './components/availablity/add-availabtity/add-availabtity.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { AvailablityComponent } from './components/availablity/availablity.compo
     ApplicationFormComponent,
     FrontOfficeComponent,
     ListeClassifierCondidatsComponent,
-    AvailablityComponent
+    AvailablityComponent,
+    ListAvailabtityComponent,
+    AddAvailabtityComponent
   ],
   imports: [
     BrowserModule,
