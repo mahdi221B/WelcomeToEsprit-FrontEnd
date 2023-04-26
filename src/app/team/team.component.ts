@@ -14,6 +14,7 @@ export class TeamComponent implements OnInit{
   constructor(private teamService: TeamService ,private location: Location){}
   teams!:Team[];
     currentPage = 1;
+    id!:number
 
   ngOnInit(): void {
     
@@ -24,7 +25,29 @@ this.teamService.getteam()
         createTeams(){
  this.teamService.createteams().subscribe((response) =>{
 console.log(response);
+
+
  });
 }
+
+public givemark(id:number){
+
+  const currentteam = this.teams.find((t)=>{return t.id===id})
+if(currentteam){
+this.teamService.assignmark(currentteam.id,currentteam).subscribe(
+      (response) => {
+        console.log(response);
+       
+      }
+    );
+  }
+
+
+
+ }
+
+
+
+
 
 }

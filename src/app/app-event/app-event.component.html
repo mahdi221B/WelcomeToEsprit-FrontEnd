@@ -43,11 +43,12 @@
                  <td *ngIf="!user.team">only student have team</td>
                   <td *ngIf="user.profil.teamcaptain"> yes</td>
                    <td *ngIf="!user.profil.teamcaptain">No</td>
-
-                  <td>
+                    <div *ngFor="let r of user.roles">               
+                         <td *ngIf="r.roleName === 'teacher'" >
                     <button type="submit" class="btn btn-danger" (click)="asigntojury(user.id)">asign</button>
                   </td>
-                 
+                 </div>
+
                  
                 </tr>
               </tbody>

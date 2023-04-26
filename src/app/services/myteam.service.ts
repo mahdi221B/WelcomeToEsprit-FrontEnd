@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 import { Team } from '../model/Team';
+import { ProjectaddedsuccComponent } from '../projectaddedsucc/projectaddedsucc.component';
 
 @Injectable({ 
   providedIn: 'root'
@@ -33,6 +34,8 @@ public getprojectid(id:number):Observable<any>{
 }
 
 addVideoProject(file: File, desc: string, idteam: number, id: number): Observable<string> {
+
+
     const formData = new FormData();
     formData.append('file', file);
     formData.append('desc', desc);

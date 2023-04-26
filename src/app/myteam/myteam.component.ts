@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MyteamService } from '../services/myteam.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { User } from '../model/User';
 import { Team } from '../model/Team';
 import { Project } from '../model/Project';
@@ -20,7 +20,7 @@ user!:User;
   team!:Team;
   project!:Project;
   errorMessage!: string;
-  constructor(private route:ActivatedRoute ,private myteamservice:MyteamService){}
+  constructor(private route:ActivatedRoute ,private myteamservice:MyteamService,private router:Router){}
 
 
      
@@ -45,6 +45,7 @@ this.myteamservice.getprojectid(this.user.team.id).subscribe(project => {
 
 
   addVideoProject(): void {
+   
      this.route.queryParams.subscribe((queryParams) => {
       this.id = queryParams['id'] ;
       if (this.project) {
@@ -58,7 +59,14 @@ this.myteamservice.getprojectid(this.user.team.id).subscribe(project => {
          console.log(this.errorMessage);
          console.log(this.project);
       });
+
   });
+  this.succ();
+}
+
+succ(){
+
+  this.router.navigate(['/', 'succ']);
 }
 }
   

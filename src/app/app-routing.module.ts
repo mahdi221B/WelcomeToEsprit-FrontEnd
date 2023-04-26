@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { AppEventComponent } from './app-event/app-event.component';
 import { TeamComponent } from './team/team.component';
 import { MyteamComponent } from './myteam/myteam.component';
+import { ProjectComponent } from './project/project.component';
+import { ProjectaddedsuccComponent } from './projectaddedsucc/projectaddedsucc.component';
+import { GetvideoComponent } from './getvideo/getvideo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,6 +20,11 @@ const routes: Routes = [
   {path :'event', component:AppEventComponent},
     {path :'team', component:TeamComponent},
 {path :'Myteam',component:MyteamComponent},
+{path:'Projects',component:ProjectComponent},
+{path:'stats',component:ProjectaddedsuccComponent},
+{path:'succ',component:GetvideoComponent},
+
+
   { path: '**', component: NotFoundComponent }
   
 ];

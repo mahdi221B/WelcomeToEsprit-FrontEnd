@@ -13,6 +13,7 @@
                   <th>budget</th>
                   <th>department</th>
                   <th>Note</th>
+                  <th> calculate  note </th>
                 </tr>
               </thead>
               <tbody>
@@ -21,6 +22,7 @@
                   <td>{{ team.budget }}</td>
                  <td>{{ team.department }}</td>
                  <td>{{ team.noteTeam }}</td> 
+                 <td> <button class="btn btn-danger" (click)="givemark(team.id)" > calculate  mark </button> </td> 
                 
                  
                  

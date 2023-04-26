@@ -20,6 +20,8 @@ import { TeamComponent } from './team/team.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProjectComponent } from './project/project.component';
 import { MyteamComponent } from './myteam/myteam.component';
+import { ProjectaddedsuccComponent } from './projectaddedsucc/projectaddedsucc.component';
+import { GetvideoComponent } from './getvideo/getvideo.component';
 
 
 
@@ -37,6 +39,8 @@ import { MyteamComponent } from './myteam/myteam.component';
     TeamComponent,
     ProjectComponent,
     MyteamComponent,
+    ProjectaddedsuccComponent,
+    GetvideoComponent,
   ],
   imports: [
           BrowserModule,

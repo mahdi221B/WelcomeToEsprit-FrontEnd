@@ -11,12 +11,13 @@ project!:Project;
   constructor(private http: HttpClient) { }
 
 
-/*
-  addVideo(file: File, desc: string, id: number, iduser: number): Observable<string> {
-    const formData: FormData = new FormData();
-    formData.append('file', file, file.name);
-    formData.append('desc', desc);
-    return this.http.post<string>(`${this.baseUrl}/addvideo/${id}/${iduser}`, formData);
-  }
-*/
+
+
+  getAllProjects(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:8088/WelcomeToEsprit/Project/getall') }
+
+  //getVideoById(id: number): Observable<Project> {
+    //return this.http.get<Project>(`${this.baseUrl}/videos/${id}`);
+  //}
+
 }

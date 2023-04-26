@@ -36,6 +36,7 @@ user!:User;
     this.appevent= new AppEvent();
     this.user= new User();
   }
+  
 
 public addEvent(){  
      return this.appEventService.addEvent(this.appevent).subscribe((response) =>{

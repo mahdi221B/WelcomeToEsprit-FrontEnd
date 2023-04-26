@@ -18,33 +18,41 @@
                      
                     <th>Name</th>
                     <th>roles</th>
-                    <th>team</th>
-                    <th>teamcaptain</th>
+                      
+                  <th>team</th>
+                     <th>teamcaptain</th>
+                     <th> Note</th> 
+
+                    
                     
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>{{ user.firstName }}</td>
-                  <td><ng-container  *ngFor="let r of user.roles" >{{r.roleName}} , </ng-container></td>
+                  <ng-container  *ngFor="let r of user.roles" >{{r.roleName}} , </ng-container>
                    <td *ngIf="user.team">{{ user.team.name }}</td>
-                 <td *ngIf="!user.team">only student have team</td>
+               
+                      
                   <td *ngIf="user.profil.teamcaptain"> yes</td>
                    <td *ngIf="!user.profil.teamcaptain">No</td>
-                   
+                   <td>{{ user.team.noteTeam }}</td> 
+                           
                   </tr>
                 </tbody>
 
 
               </table>
-                <div *ngIf="user.profil.teamcaptain" > 
-                                <div>
+              <div *ngIf="user.profil.teamcaptain !== true" > 
+                                 you can"t upload a video , only team captain  can upload </div>
+                <div *ngIf="user.profil.teamcaptain!==false" > 
+                               
                     <input type="file" (change)="onFileSelected($event)">
                         <input type="text" [(ngModel)]="desc">
                           <button (click)="addVideoProject()" [disabled]="project">Add Video Project</button>  </div>
                     {{ errorMessage }}
-
-            </div>
+                      <div>
+                                    </div>
           </div>
         </div>
       </div>

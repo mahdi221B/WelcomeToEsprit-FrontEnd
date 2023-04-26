@@ -28,6 +28,7 @@ public addEvent(event: AppEvent)  {
     
 
 public assignTeacherToJury(id: number,value:any):Observable<any>{
+    window.location.reload();
       
       return this.http.put<any>('http://localhost:8088/WelcomeToEsprit/AppEvent/teachertojury/'+id+'',value );
 
