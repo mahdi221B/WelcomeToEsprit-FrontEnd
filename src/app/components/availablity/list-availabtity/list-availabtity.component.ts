@@ -11,19 +11,20 @@ import { availablityservice } from 'src/app/recruitment-service/availablity-serv
 export class ListAvailabtityComponent implements OnInit {
 
 
-  availablity:Availablity=new Availablity()
+  availablity: Availablity = new Availablity()
   listAvailablity!: Availablity[]
-
-
-constructor(private  availablityservice:availablityservice,private route:Router){}
-  ngOnInit(): void {
+  id: number= 2;
+  currentPage: number= 2;
   
-    this.availablityservice.getAvailablit().subscribe(
-      res=>{
-        console.log("res",res);
-        
-        this.listAvailablity=res
-        
+
+
+  constructor(private availablityservice: availablityservice, private route: Router) { }
+  ngOnInit(): void {
+
+    this.availablityservice.getAvailablitById(this.id).subscribe(
+      res => {
+        console.log("res", res);
+        this.listAvailablity = res
       }
     )
 

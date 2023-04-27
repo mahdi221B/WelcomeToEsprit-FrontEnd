@@ -12,15 +12,16 @@ export class availablityservice {
 
 
 
-    baseUrl:string="http://localhost:8088/WelcomeToEsprit/availablity/";
+    baseUrl:string="http://localhost:8088/WelcomeToEsprit/availablity/getUserDisponbility";
     constructor(private http: HttpClient) { }
 
-    getAvailablit():Observable<Availablity[]>{
-        return this.http.get<Availablity[]>(`${this.baseUrl}`);
-    }
     updateAvailablit(id: number, value: any): Observable<Availablity> {
         return this.http.put<Availablity>(`${this.baseUrl}/${id}`, value);
-      }
+    }
+    getAvailablitById(id: number): Observable<Availablity[]> {
+      return this.http.get<Availablity[]>(`${this.baseUrl}/${id}`);
+    }
+    
     
 
 }

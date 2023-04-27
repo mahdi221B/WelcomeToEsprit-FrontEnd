@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:"addOffer",component:AddOfferComponent},
   {path:"list-condidats",component:ListeClassifierCondidatsComponent},
   {path:"add",component:AddOfferComponent},
-  {path:"list- availablity",component:ListAvailabtityComponent},
+  {path:"list-availablity",component:ListAvailabtityComponent},
   { path:'test', component : TestComponent},
   { path: '**', component: NotFoundComponent }
   

@@ -21,6 +21,8 @@ import { ListeClassifierCondidatsComponent } from './components/liste-classifier
 import { AvailablityComponent } from './components/availablity/availablity.component';
 import { ListAvailabtityComponent } from './components/availablity/list-availabtity/list-availabtity.component';
 import { AddAvailabtityComponent } from './components/availablity/add-availabtity/add-availabtity.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { AddAvailabtityComponent } from './components/availablity/add-availabtit
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
