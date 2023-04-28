@@ -103,9 +103,10 @@
             
       
                           <div class="form-group text-center"> 
-                      
-                              <button type="submit" class="btn btn-danger"   (click)="UpdateOffer()" >Update</button>
-                          </div>
+                            <!-- aria-label="Close"  data-dismiss="modal" (click)="closeModal(); -->
+                              <!-- <button type="submit" class="btn btn-danger" aria-label="Close"  data-dismiss="modal" (click)="closeModal();  (click)="UpdateOffer()" >Update</button> -->
+                              <button type="submit" class="btn btn-danger" aria-label="Close"  data-dismiss="modal" (click)="closeModal(); UpdateOffer()">Submit</button>
+                            </div>
                       </div>
                   </div>
               </div>

@@ -11,6 +11,7 @@ import { JobOfferServiceService } from 'src/app/recruitment-service/job-offer-se
 export class ListOffresComponent implements OnInit {
 listOffers!: JobOffer[]
   currentPage = 1; 
+  showModal = false;
 
   idJobOffer! : number; 
   offerJob:JobOffer=new JobOffer()
@@ -66,6 +67,10 @@ constructor(private jobofferservice:JobOfferServiceService,private route:Router)
     })
     this.route.navigate(['/listoffers'])
   
+  }
+
+  closeModal() {
+    this.showModal = false;
   }
 
   deleteOffre(id : number){
