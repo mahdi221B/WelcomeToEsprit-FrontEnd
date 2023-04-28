@@ -7,17 +7,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProjectService {
-project!:Project;
+  project!: Project;
   constructor(private http: HttpClient) { }
 
 
 
 
   getAllProjects(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:8088/WelcomeToEsprit/Project/getall') }
+    return this.http.get<any[]>('http://localhost:8088/WelcomeToEsprit/Project/getall')
+  }
 
-  //getVideoById(id: number): Observable<Project> {
-    //return this.http.get<Project>(`${this.baseUrl}/videos/${id}`);
-  //}
+  getVideoById(id: number): Observable<any> {
+    return this.http.get<Project>('http://localhost:8088/WelcomeToEsprit/Project/media/' + id);
+  }
 
 }

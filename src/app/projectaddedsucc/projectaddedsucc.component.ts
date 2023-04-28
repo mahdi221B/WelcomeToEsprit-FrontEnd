@@ -44,7 +44,7 @@ export class ProjectaddedsuccComponent implements OnInit {
 
   createChart(d: any) {
     this.chart = new Chart("MyChart", {
-      type: 'pie', // This denotes the type of chart
+      type: 'bar', // This denotes the type of chart
 
       data: {
         labels: Object.keys(d), // Values on X-Axis

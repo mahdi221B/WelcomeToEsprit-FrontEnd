@@ -22,6 +22,7 @@ import { ProjectComponent } from './project/project.component';
 import { MyteamComponent } from './myteam/myteam.component';
 import { ProjectaddedsuccComponent } from './projectaddedsucc/projectaddedsucc.component';
 import { GetvideoComponent } from './getvideo/getvideo.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 
 
@@ -41,6 +42,7 @@ import { GetvideoComponent } from './getvideo/getvideo.component';
     MyteamComponent,
     ProjectaddedsuccComponent,
     GetvideoComponent,
+    ProjectDetailComponent,
   ],
   imports: [
           BrowserModule,
