@@ -4,9 +4,9 @@
     <div class="card">
       <div class="card-body d-flex align-items-center">
         <p class="card-title flex-grow-1">Aviaalabitlty Table</p>
-        <button type="button" class="btn" routerLink="/home/ads/add" style="background-color: #E60A14; color: #fff;">
-          <i class="fas fa-plus"></i>ADD
-        </button>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter"  >
+          Add
+         </button>
       </div>
       <div class="row">
         <div class="col-12">
@@ -16,14 +16,23 @@
                 <tr>
                   <th>Date début</th>
                   <th>Date fin</th>
+                  <th>Action</th>
                   
     
                 </tr>
               </thead>
-              <tbody *ngFor="let c of listAvailablity">
+              <tbody *ngFor="let c of listAvailablity| paginate: { itemsPerPage: 3, currentPage: currentPage }">
                <tr>
-                <td>{{c.date_debut_diso}}</td>
-                <td>{{c.date_fin_diso}}</td>
+                <td>{{c.date_debut_diso | date:'yyyy-MM-dd' }}</td>
+                <td>{{c.date_fin_diso | date:'yyyy-MM-dd' }}</td>
+
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter" (click)="getId(c.idDisbo)" >
+                  Edit
+                 </button>
+                 <button type="button" class="btn btn-danger"   >
+                   Delete
+                  </button>
+
                
            
                </tr>
@@ -33,6 +42,44 @@
             <div>
           <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" #myModal id="exampleModalCenter" tabindex="-1" role="dialog" [ngClass]="{'show': showModal}" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <form>
+          <div class="row">
+              <div class="col-md-12 grid-margin">
+                  <div class="card rounded">
+                      <div class="card-header">
+                          <h4 class="card-title">ADD ADS</h4>
+                      </div>
+                      <div class="card-body">
+                        <div class="form-group text-center">
+                            <input type="date" class="form-control form-control-sm w-75 mx-auto" name="Date début"
+                                [(ngModel)]="availablity.date_debut_diso" placeholder="Date début" required #titleInput>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="date" class="form-control form-control-sm w-75 mx-auto" name="Date fin"
+                                [(ngModel)]="availablity.date_fin_diso" placeholder="Date fin" required #titleInput>
+                        </div>
+
+                          <div class="form-group text-center">
+                            <!-- aria-label="Close"  data-dismiss="modal" (click)="closeModal();  -->
+                            <button type="submit" class="btn btn-danger" aria-label="Close"  data-dismiss="modal" (click)="closeModal(); UpdateAvailability()">Submit</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </form>
       </div>
     </div>
   </div>

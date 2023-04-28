@@ -10,12 +10,10 @@ import { JobOfferServiceService } from 'src/app/recruitment-service/job-offer-se
 })
 export class ListOffresComponent implements OnInit {
 listOffers!: JobOffer[]
-  ad!: JobOffer;
   currentPage = 1; 
-  
-   idJobOffer! : number;
 
-   offerJob:JobOffer=new JobOffer()
+  idJobOffer! : number; 
+  offerJob:JobOffer=new JobOffer()
 
 
 constructor(private jobofferservice:JobOfferServiceService,private route:Router){}
@@ -24,11 +22,14 @@ constructor(private jobofferservice:JobOfferServiceService,private route:Router)
     this.jobofferservice.getJobOffers().subscribe(
       res=>{
         console.log("res",res);
-        
         this.listOffers=res
       }
     )
   }
+
+
+
+
   update(id: number) {
     this.route.navigateByUrl(`/home/offer/update/${id}`);
   }
@@ -45,13 +46,11 @@ constructor(private jobofferservice:JobOfferServiceService,private route:Router)
   getId(id : number){
     this.idJobOffer = id
     console.log('id', this.idJobOffer);
-
    this.jobofferservice.getJobOffer(id).subscribe((data)=>{
       this.offerJob = data
       console.log(this.offerJob);
       
     }) 
-    
   }
 
   UpdateOffer(){
