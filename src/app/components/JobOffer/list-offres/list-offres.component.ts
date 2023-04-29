@@ -15,6 +15,9 @@ listOffers!: JobOffer[]
 
   idJobOffer! : number; 
   offerJob:JobOffer=new JobOffer()
+  
+  
+  
 
 
 constructor(private jobofferservice:JobOfferServiceService,private route:Router){}
@@ -73,7 +76,35 @@ constructor(private jobofferservice:JobOfferServiceService,private route:Router)
     this.showModal = false;
   }
 
+
+
+  // addJob():void{
+  //    console.log(this.offerJob);
+     
+  //      this.jobofferservice.createJobOffer(this.offerJob).subscribe(
+  //        res=>{
+  //          console.log("res",res);
+          
+  //         this.listOffers.push
+  //        }
+  //      )
+     
+  //    }
+  addOffre(): void {
+    this.jobofferservice.createJobOffer(this.offerJob)
+      .subscribe(response => {
+        console.log(response);
+        
+        // Faire quelque chose avec la réponse
+        // (rediriger vers une autre page, afficher un message de confirmation, etc.)
+      });
+      
+  }
+
+
+
   deleteOffre(id : number){
+    
     this.jobofferservice.deleteJobOffer(id).subscribe((response)=> {
       this.jobofferservice.getJobOffers().subscribe(
         res=>{

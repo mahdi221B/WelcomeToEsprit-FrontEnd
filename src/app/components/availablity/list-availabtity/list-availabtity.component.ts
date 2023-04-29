@@ -50,6 +50,7 @@ export class ListAvailabtityComponent implements OnInit {
         res=>{
           console.log("res",res);
           this.listAvailablity=res
+    
         }
       )
     })
@@ -61,10 +62,32 @@ export class ListAvailabtityComponent implements OnInit {
     this.showModal = false;
   }
 
-  addOffer(){
+  addOffre(): void {
+    this.availablityservice.createAvailablity(this.availablity,this.idAvailablity)
+      .subscribe(response => {
+        console.log(response);
+        // Faire quelque chose avec la réponse
+        // (rediriger vers une autre page, afficher un message de confirmation, etc.)
+      });
   }
 
-    
+
+
+
+  deleteAvailability  (id : number){
+   
+    this.availablityservice.deleteavailablity(id).subscribe((response)=> {
+      this.availablityservice.getAvailablitToUpdateById(id).subscribe(
+        res=>{
+          console.log("res",res);
+          
+          this.availablity=res
+        }
+      )
+      
+    })
+    this.route.navigate(['/list-availablity'])
+  }
   
     
 

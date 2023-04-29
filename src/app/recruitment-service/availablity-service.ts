@@ -30,7 +30,13 @@ export class availablityservice {
     getAvailablitToUpdateById(id: number): Observable<Availablity> {
       return this.http.get<Availablity>(`${this.baseUrl}/getby/${id}`);
     }
+    // getJobOffer(id : number): Observable<Availablity> {
+    //   return this.http.get<Availablity>(`${this.baseUrl}/`+ id);
+    // }
     
+    deleteavailablity(idDisbo: number): Observable<any> {
+      return this.http.delete(`${this.baseUrl}/${idDisbo}`, { responseType: 'text' });
+    }
     
 
 }

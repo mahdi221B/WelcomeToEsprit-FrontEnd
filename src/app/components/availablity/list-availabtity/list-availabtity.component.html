@@ -4,7 +4,7 @@
     <div class="card">
       <div class="card-body d-flex align-items-center">
         <p class="card-title flex-grow-1">Aviaalabitlty Table</p>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter"  >
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter2" (click)="addOffre"  >
           Add
          </button>
       </div>
@@ -29,7 +29,7 @@
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter" (click)="getId(c.idDisbo)" >
                   Edit
                  </button>
-                 <button type="button" class="btn btn-danger"   >
+                 <button type="button" class="btn btn-danger" (click)="deleteAvailability(c.idDisbo)"  >
                    Delete
                   </button>
 
@@ -74,6 +74,44 @@
                           <div class="form-group text-center">
                             <!-- aria-label="Close"  data-dismiss="modal" (click)="closeModal();  -->
                             <button type="submit" class="btn btn-danger" aria-label="Close"  data-dismiss="modal" (click)="closeModal(); UpdateAvailability()">Submit</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal2 -->
+<div class="modal fade" #myModal id="exampleModalCenter2" tabindex="-1" role="dialog" [ngClass]="{'show': showModal}" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <form>
+          <div class="row">
+              <div class="col-md-12 grid-margin">
+                  <div class="card rounded">
+                      <div class="card-header">
+                          <h4 class="card-title">ADD ADS</h4>
+                      </div>
+                      <div class="card-body">
+                        <div class="form-group text-center">
+                            <input type="date" class="form-control form-control-sm w-75 mx-auto" name="Date début"
+                                [(ngModel)]="availablity.date_debut_diso" placeholder="Date début" required #titleInput>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="date" class="form-control form-control-sm w-75 mx-auto" name="Date fin"
+                                [(ngModel)]="availablity.date_fin_diso" placeholder="Date fin" required #titleInput>
+                        </div>
+
+                          <div class="form-group text-center">
+                            <!-- aria-label="Close"  data-dismiss="modal" (click)="closeModal();  -->
+                            <button type="submit" class="btn btn-danger" aria-label="Close"  data-dismiss="modal" (click)="closeModal(); addOffre()">Submit</button>
                           </div>
                       </div>
                   </div>
