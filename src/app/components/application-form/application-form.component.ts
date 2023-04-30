@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,Input,OnInit } from '@angular/core';
 import { ApplicationForm } from 'src/app/model/applicationForm';
 import { ApplicationFormsServices } from 'src/app/recruitment-service/ApplicationFormservice';
 
@@ -10,7 +10,7 @@ import { ApplicationFormsServices } from 'src/app/recruitment-service/Applicatio
 export class ApplicationFormComponent implements OnInit {
 
   applicationForm = new ApplicationForm() ;
-  idApp : number = 30 ;
+  @Input() idApp! : number  ;
 
   constructor(private applicationFormService : ApplicationFormsServices) { }
 

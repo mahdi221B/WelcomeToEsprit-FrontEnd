@@ -6,7 +6,9 @@
       <p class="card-text">Speaciality: {{o.specialty}}</p>
       <p class="card-text">Location : {{o.location}}</p>
       <p class="card-text">Requirements{{o.requirements}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter" (click)="postulerId(o.idOffre)" >
+        Postuler
+       </button>
     </div>
   </div>
 
@@ -18,7 +20,7 @@
       <div class="modal-content">
   
         <div class="modal-body">
-          <form>
+          <!-- <form>
             <div class="row">
                 <div class="col-md-12 grid-margin">
                     <div class="card rounded">
@@ -46,14 +48,7 @@
                               <input type="text" class="form-control form-control-sm w-75 mx-auto" name="requirements"
                                   placeholder="requirements" required #titleInput>
                           </div>
-                          <!-- <div *ngIf="titleInput.invalid && (titleInput.dirty || titleInput.touched)" class="alert alert-danger">
-                      <div *ngIf="titleInput.errors?.['required']">
-                          <p class="text-danger">Id is required</p>
-                      </div>
-                      <div *ngIf="titleInput.errors?.['minlength']">
-                          <p class="text-danger">Must be at least 4 characters long</p>
-                      </div>
-                  </div> -->
+        
                           <div class="form-group text-center">
                               <input type="date" class="form-control form-control-sm w-75 mx-auto" name="startDate"
                                   placeholder="Date début">
@@ -61,15 +56,15 @@
               
         
                             <div class="form-group text-center"> 
-                              <!-- aria-label="Close"  data-dismiss="modal" (click)="closeModal(); -->
-                                <!-- <button type="submit" class="btn btn-danger" aria-label="Close"  data-dismiss="modal" (click)="closeModal();  (click)="UpdateOffer()" >Update</button> -->
+                       
                                 <button type="submit" class="btn btn-danger" aria-label="Close"  data-dismiss="modal" >Submit</button>
                               </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
+        </form> -->
+        <app-application-form [idApp]="idOffre"></app-application-form>
         </div>
       </div>
     </div>
