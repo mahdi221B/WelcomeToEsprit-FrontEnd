@@ -63,11 +63,16 @@ export class ListAvailabtityComponent implements OnInit {
   }
 
   addOffre(): void {
-    this.availablityservice.createAvailablity(this.availablity,this.idAvailablity)
+    this.availablityservice.createAvailablity(this.availablity,this.id)
       .subscribe(response => {
         console.log(response);
-        // Faire quelque chose avec la réponse
-        // (rediriger vers une autre page, afficher un message de confirmation, etc.)
+        this.availablityservice.getAvailablitById(this.id).subscribe(
+          res=>{
+            console.log("res",res);
+            this.listAvailablity=res
+          }
+        )
+        
       });
   }
 
@@ -82,11 +87,18 @@ export class ListAvailabtityComponent implements OnInit {
           console.log("res",res);
           
           this.availablity=res
+
+        }
+      )
+      this.availablityservice.getAvailablitById(this.id).subscribe(
+        res=>{
+          console.log("res",res);
+          this.listAvailablity=res
         }
       )
       
     })
-    this.route.navigate(['/list-availablity'])
+    
   }
   
     

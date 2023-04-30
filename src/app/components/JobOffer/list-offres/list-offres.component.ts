@@ -97,7 +97,14 @@ constructor(private jobofferservice:JobOfferServiceService,private route:Router)
         
         // Faire quelque chose avec la réponse
         // (rediriger vers une autre page, afficher un message de confirmation, etc.)
+        this.jobofferservice.getJobOffers().subscribe(
+          res=>{
+            console.log("res",res);
+            this.listOffers=res
+          }
+        )
       });
+ 
       
   }
 

@@ -13,8 +13,8 @@ export class availablityservice {
 
 
    // baseUrl:string="http://localhost:8088/WelcomeToEsprit/availablity/getUserDisponbility";
-    baseUrl:string="http://localhost:8088/WelcomeToEsprit/availablity";
-    constructor(private http: HttpClient) { }
+      baseUrl:string="http://localhost:8088/WelcomeToEsprit/availablity";
+      constructor(private http: HttpClient) { }
 
 
 
@@ -29,7 +29,7 @@ export class availablityservice {
     }
     getAvailablitToUpdateById(id: number): Observable<Availablity> {
       return this.http.get<Availablity>(`${this.baseUrl}/getby/${id}`);
-    }
+    } 
     // getJobOffer(id : number): Observable<Availablity> {
     //   return this.http.get<Availablity>(`${this.baseUrl}/`+ id);
     // }

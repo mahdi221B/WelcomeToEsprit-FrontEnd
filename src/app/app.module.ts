@@ -22,6 +22,7 @@ import { AvailablityComponent } from './components/availablity/availablity.compo
 import { ListAvailabtityComponent } from './components/availablity/list-availabtity/list-availabtity.component';
 import { AddAvailabtityComponent } from './components/availablity/add-availabtity/add-availabtity.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FrontOfficeOffreComponent } from './components/front-office-offre/front-office-offre.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ListeClassifierCondidatsComponent,
     AvailablityComponent,
     ListAvailabtityComponent,
-    AddAvailabtityComponent
+    AddAvailabtityComponent,
+    FrontOfficeOffreComponent
   ],
   imports: [
     BrowserModule,

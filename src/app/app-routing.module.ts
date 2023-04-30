@@ -10,6 +10,7 @@ import { TestComponent } from './components/JobOffer/test/test.component';
 import { ApplicationFormComponent } from './components/application-form/application-form.component';
 import { ListeClassifierCondidatsComponent } from './components/liste-classifier-condidats/liste-classifier-condidats.component';
 import { ListAvailabtityComponent } from './components/availablity/list-availabtity/list-availabtity.component';
+import { FrontOfficeOffreComponent } from './components/front-office-offre/front-office-offre.component';
 
 const routes: Routes = [
  { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,6 +22,8 @@ const routes: Routes = [
   {path:"add",component:AddOfferComponent},
   {path:"list-availablity",component:ListAvailabtityComponent},
   { path:'test', component : TestComponent},
+  { path:'app', component : ApplicationFormComponent},
+  { path:'list-offre', component : FrontOfficeOffreComponent},
   { path: '**', component: NotFoundComponent }
   
 ];

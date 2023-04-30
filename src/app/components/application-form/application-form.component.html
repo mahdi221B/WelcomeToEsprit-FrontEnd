@@ -7,41 +7,42 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group text-center">
-                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="title"
-                            placeholder="Title" required #titleInput>
+                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="name"
+                         [(ngModel)]="applicationForm.name"   placeholder="name" required #titleInput>
                     </div>
                     <div class="form-group text-center">
-                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="specialty"
-                             placeholder="specialty" required #titleInput>
+                        <input type="number" class="form-control form-control-sm w-75 mx-auto" name="experience"
+                        [(ngModel)]="applicationForm.experience"    placeholder="experience" required #titleInput>
                     </div>
                     <div class="form-group text-center">
-                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="description"
-                            placeholder="description" required #titleInput>
+                        <input type="number" class="form-control form-control-sm w-75 mx-auto" name="salary"
+                        [(ngModel)]="applicationForm.salary"    placeholder="salary" required #titleInput>
                     </div>
                     <div class="form-group text-center">
-                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="location"
-                        placeholder="location" required #titleInput>
+                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="cv"
+                        [(ngModel)]="applicationForm.cv"  placeholder="cv" required #titleInput>
                     </div>
                     <div class="form-group text-center">
-                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="requirements"
-                             placeholder="requirements" required #titleInput>
-                    </div>
-                    <!-- <div *ngIf="titleInput.invalid && (titleInput.dirty || titleInput.touched)" class="alert alert-danger">
-                <div *ngIf="titleInput.errors?.['required']">
-                    <p class="text-danger">Id is required</p>
-                </div>
-                <div *ngIf="titleInput.errors?.['minlength']">
-                    <p class="text-danger">Must be at least 4 characters long</p>
-                </div>
-            </div> -->
-                    <div class="form-group text-center">
-                        <input type="date" class="form-control form-control-sm w-75 mx-auto" name="startDate"
-                            placeholder="Date début">
+                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="motivationLetter"
+                        [(ngModel)]="applicationForm.motivationLetter"    placeholder="motivationLetter" required #titleInput>
                     </div>
 
 
                     <div class="form-group text-center">
-                        <button type="submit" class="btn btn-danger" >Submit</button>
+                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="email"
+                        [(ngModel)]="applicationForm.email"   placeholder="email" required #titleInput>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <input type="text" class="form-control form-control-sm w-75 mx-auto" name="note"
+                        [(ngModel)]="applicationForm.note"    placeholder="note" required #titleInput>
+                    </div>
+                  
+                   
+
+
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-danger" (click)="addApp()" >Submit</button>
                     </div>
                 </div>
             </div>

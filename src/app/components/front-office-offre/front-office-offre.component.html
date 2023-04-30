@@ -1,0 +1,76 @@
+
+<div class="card" style="width: 18rem;" *ngFor="let o of listJobOffres">
+    <div class="card-body">
+      <h5 class="card-title">{{o.title}}</h5>
+      <p class="card-text">Description :{{o.description}}</p>
+      <p class="card-text">Speaciality: {{o.specialty}}</p>
+      <p class="card-text">Location : {{o.location}}</p>
+      <p class="card-text">Requirements{{o.requirements}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+  
+        <div class="modal-body">
+          <form>
+            <div class="row">
+                <div class="col-md-12 grid-margin">
+                    <div class="card rounded">
+                        <div class="card-header">
+                            <h4 class="card-title">ADD ADS</h4>
+                        </div>
+                        <div class="card-body">
+                          <div class="form-group text-center">
+                              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="title"
+                              placeholder="Title" required #titleInput>
+                          </div>
+                          <div class="form-group text-center">
+                              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="specialty"
+                               placeholder="specialty" required #titleInput>
+                          </div>
+                          <div class="form-group text-center">
+                              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="description"
+                                 placeholder="description" required #titleInput>
+                          </div>
+                          <div class="form-group text-center">
+                              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="location"
+                                 placeholder="location" required #titleInput>
+                          </div>
+                          <div class="form-group text-center">
+                              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="requirements"
+                                  placeholder="requirements" required #titleInput>
+                          </div>
+                          <!-- <div *ngIf="titleInput.invalid && (titleInput.dirty || titleInput.touched)" class="alert alert-danger">
+                      <div *ngIf="titleInput.errors?.['required']">
+                          <p class="text-danger">Id is required</p>
+                      </div>
+                      <div *ngIf="titleInput.errors?.['minlength']">
+                          <p class="text-danger">Must be at least 4 characters long</p>
+                      </div>
+                  </div> -->
+                          <div class="form-group text-center">
+                              <input type="date" class="form-control form-control-sm w-75 mx-auto" name="startDate"
+                                  placeholder="Date début">
+                          </div>
+              
+        
+                            <div class="form-group text-center"> 
+                              <!-- aria-label="Close"  data-dismiss="modal" (click)="closeModal(); -->
+                                <!-- <button type="submit" class="btn btn-danger" aria-label="Close"  data-dismiss="modal" (click)="closeModal();  (click)="UpdateOffer()" >Update</button> -->
+                                <button type="submit" class="btn btn-danger" aria-label="Close"  data-dismiss="modal" >Submit</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
