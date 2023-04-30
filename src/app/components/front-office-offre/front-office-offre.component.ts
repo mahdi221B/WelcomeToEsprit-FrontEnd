@@ -12,8 +12,12 @@ export class FrontOfficeOffreComponent implements OnInit   {
   listJobOffres! : JobOffer[];
 
   idOffre! : number;
+  //1
+  showModal = false;
   
 constructor(private jobOfferServiceService : JobOfferServiceService){}
+
+
 
 ngOnInit(): void {
 
@@ -22,7 +26,15 @@ ngOnInit(): void {
    })
 }
 
+
+//2
+closeModal() {
+  this.showModal = false;
+}
+
 postulerId(id : number){
 this.idOffre = id
 }
 }
+
+

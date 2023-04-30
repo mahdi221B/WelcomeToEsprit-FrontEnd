@@ -12,6 +12,9 @@ export class ApplicationFormComponent implements OnInit {
   applicationForm = new ApplicationForm() ;
   @Input() idApp! : number  ;
 
+  //1
+  showModal = false;
+
   constructor(private applicationFormService : ApplicationFormsServices) { }
 
 
@@ -26,5 +29,9 @@ export class ApplicationFormComponent implements OnInit {
         
        })
     }
+    //2
+  closeModal() {
+    this.showModal = false;
+  }
 
 }

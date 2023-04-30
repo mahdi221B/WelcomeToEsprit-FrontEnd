@@ -11,6 +11,7 @@ import { ApplicationFormComponent } from './components/application-form/applicat
 import { ListeClassifierCondidatsComponent } from './components/liste-classifier-condidats/liste-classifier-condidats.component';
 import { ListAvailabtityComponent } from './components/availablity/list-availabtity/list-availabtity.component';
 import { FrontOfficeOffreComponent } from './components/front-office-offre/front-office-offre.component';
+import { RendezVousComponent } from './components/rendez-vous/rendez-vous.component';
 
 const routes: Routes = [
  { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,8 +23,9 @@ const routes: Routes = [
   {path:"add",component:AddOfferComponent},
   {path:"list-availablity",component:ListAvailabtityComponent},
   { path:'test', component : TestComponent},
-  { path:'app', component : ApplicationFormComponent},
+   { path:'app', component : ApplicationFormComponent},
   { path:'list-offre', component : FrontOfficeOffreComponent},
+  { path:'rendez-vous/:id', component : RendezVousComponent},
   { path: '**', component: NotFoundComponent }
   
 ];

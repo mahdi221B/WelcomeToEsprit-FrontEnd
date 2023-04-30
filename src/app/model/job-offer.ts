@@ -38,4 +38,5 @@ export class JobOffer {
     location!: string;
 
     date_limite!: Date;
+    applicationForms!: any[];
 }

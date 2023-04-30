@@ -37,6 +37,9 @@
                     <td>{{offer.location}}</td>
                     <td>{{offer.date_limite}}</td>
                     <td>
+                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter3" (click)="getId(offer.idOffre)" >
+                        Show candidats
+                       </button>
                       <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter" (click)="getId(offer.idOffre)" >
                        Edit
                       </button>
@@ -180,6 +183,39 @@
               </div>
           </div>
       </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal3 -->
+<div class="modal fade"  id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="width: 1000px;">
+
+      <div class="modal-body">
+        <table class="display expandable-table" style="width: auto">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>experience</th>
+              <th>note</th>
+              <th>motivationLetter</th>
+              <th>email</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let c of listcandidat">
+           <tr>
+            <td>{{c.name}}</td>
+            <td>{{c.experience}}</td>
+            <td>{{c.note}}</td>
+            <td>{{c.motivationLetter}}</td>
+            <td>{{c.email}}</td>
+           </tr>
+
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

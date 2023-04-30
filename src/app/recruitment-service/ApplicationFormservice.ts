@@ -21,9 +21,9 @@ export class ApplicationFormsServices {
         return this.http.post<any>(`${this.baseUrl}/${id}`, ApplicationForm);
       }
       
-    //   getJobOffer(id : number): Observable<ApplicationForm> {
-    //     return this.http.get<ApplicationForm>(`${this.baseUrl}/`+ id);
-    //   }
+    //    getJobOffer(id : number): Observable<any> {
+    //     return this.http.get<any>(`${this.baseUrl}/`+ id);
+    // }
     //   updateJobOffer(id: number, value: any): Observable<ApplicationForm> {
     //     return this.http.put<ApplicationForm>(`${this.baseUrl}/${id}`, value);
     //   }

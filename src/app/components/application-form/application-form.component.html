@@ -38,11 +38,11 @@
                         [(ngModel)]="applicationForm.note"    placeholder="note" required #titleInput>
                     </div>
                   
-                   
+                    <!-- aria-label="Close"  data-dismiss="modal" (click)="closeModal() -->
 
 
                     <div class="form-group text-center">
-                        <button type="submit" class="btn btn-danger" (click)="addApp()" >Submit</button>
+                        <button type="submit" class="btn btn-danger" aria-label="Close"  data-dismiss="modal" (click)="addApp();closeModal()" >Submit</button>
                     </div>
                 </div>
             </div>

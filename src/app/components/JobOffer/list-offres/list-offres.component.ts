@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApplicationForm } from 'src/app/model/applicationForm';
 import { JobOffer } from 'src/app/model/job-offer';
 import { JobOfferServiceService } from 'src/app/recruitment-service/job-offer-service.service';
 
@@ -15,12 +16,14 @@ listOffers!: JobOffer[]
 
   idJobOffer! : number; 
   offerJob:JobOffer=new JobOffer()
+
+listcandidat! : ApplicationForm[]  ; 
   
   
   
 
 
-constructor(private jobofferservice:JobOfferServiceService,private route:Router){}
+constructor(private jobofferservice:JobOfferServiceService,  private route:Router){}
 
   ngOnInit(): void {
     this.jobofferservice.getJobOffers().subscribe(
@@ -29,6 +32,7 @@ constructor(private jobofferservice:JobOfferServiceService,private route:Router)
         this.listOffers=res
       }
     )
+
   }
 
 
@@ -55,6 +59,13 @@ constructor(private jobofferservice:JobOfferServiceService,private route:Router)
       console.log(this.offerJob);
       
     }) 
+
+    
+    this.jobofferservice.getJobOffer(this.idJobOffer).subscribe((data)=>{
+      this.listcandidat =data.applicationForms;
+      console.log('candidat',this.listcandidat);
+      
+    })
   }
 
   UpdateOffer(){
