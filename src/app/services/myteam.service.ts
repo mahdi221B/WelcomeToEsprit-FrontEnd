@@ -7,39 +7,39 @@ import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 import { Team } from '../model/Team';
 import { ProjectaddedsuccComponent } from '../projectaddedsucc/projectaddedsucc.component';
 
-@Injectable({ 
+@Injectable({
   providedIn: 'root'
 })
 export class MyteamService {
-    users!: User[];
-roles!:Role[];
-id!:number;
-idteam!:number;
-  constructor(private http : HttpClient) { }
+  users!: User[];
+  roles!: Role[];
+  id!: number;
+  idteam!: number;
+  constructor(private http: HttpClient) { }
 
-public getuserbyid(id:number):Observable<any>{
+  public getuserbyid(id: number): Observable<any> {
 
-  return this.http.get<User>('http://localhost:8088/WelcomeToEsprit/get/UserById/'+id );
-}
+    return this.http.get<User>('http://localhost:8088/WelcomeToEsprit/get/UserById/' + id);
+  }
 
-public getteambyid(id:number):Observable<any>{
+  public getteambyid(id: number): Observable<any> {
 
-  return this.http.get<Team>('http://localhost:8088/WelcomeToEsprit/Team/get/'+id );
-  
-}
-public getprojectid(id:number):Observable<any>{
+    return this.http.get<Team>('http://localhost:8088/WelcomeToEsprit/Team/get/' + id);
 
-  return this.http.get<Team>('http://localhost:8088/WelcomeToEsprit/Project/get/'+id );
-  
-}
+  }
+  public getprojectid(id: number): Observable<any> {
 
-addVideoProject(file: File, desc: string, idteam: number, id: number): Observable<string> {
+    return this.http.get<Team>('http://localhost:8088/WelcomeToEsprit/Project/get/' + id);
+
+  }
+
+  addVideoProject(file: File, desc: string, idteam: number, id: number): Observable<string> {
 
 
     const formData = new FormData();
     formData.append('file', file);
     formData.append('desc', desc);
-    return this.http.post<string>('http://localhost:8088/WelcomeToEsprit/Project/addvideo/'+idteam +'/' +id , formData);
+    return this.http.post<string>('http://localhost:8088/WelcomeToEsprit/Project/addvideo/' + idteam + '/' + id, formData);
   }
 
 

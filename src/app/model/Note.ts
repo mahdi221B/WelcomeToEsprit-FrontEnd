@@ -7,4 +7,4 @@ export class Note {
   softSkils!: number;
   hardSkils!: number;
   user!: User;
-}
+} 

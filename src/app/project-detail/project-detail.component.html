@@ -1,5 +1,34 @@
-<div class="row">
-  <video width="320" height="240" controls>
-    <source [src]="'http://localhost:8088/WelcomeToEsprit/Project/media/'+project?.id" type="video/mp4">
+
+<div class="card">
+  <video width="320" height="210" controls>
+    <source [src]="'http://localhost:8088/WelcomeToEsprit/Project/media/'+project.id" type="video/mp4">
   </video>
 </div>
+
+ <h3> comments : </h3>
+     <div *ngFor="let n of project.notes" ><h6 class ="col">comment " {{n.comment}}"  by  "{{n.user.firstName}} "</h6></div>
+
+
+ id  =  {{project.id}}
+ <br>
+  {{project.description}}
+  <br>
+  {{project.team.name}}
+
+
+
+  <h1>Add Note</h1>
+   
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <input type="text" class="form-control"[(ngModel)]="note.comment" name="comment" required>
+    </div>
+    <div class="form-group">
+      <label for="softSkills">Soft Skills:</label>
+      <input type="number" class="form-control" [(ngModel)]="note.softSkils" name="softSkils" required>
+    </div>
+    <div class="form-group">
+      <label for="hardSkills">Hard Skills:</label>
+      <input type="number" class="form-control" [(ngModel)]="note.hardSkils" name="hardSkils" required>
+    </div>
+    <button type="submit" class="btn btn-primary"  (click)="givemark()" >Add Note</button>

@@ -21,10 +21,11 @@ const routes: Routes = [
   { path: 'event', component: AppEventComponent },
   { path: 'team', component: TeamComponent },
   { path: 'Myteam', component: MyteamComponent },
-  { path: 'Projects', component: ProjectComponent },
   { path: 'stats', component: ProjectaddedsuccComponent },
   { path: 'succ', component: GetvideoComponent },
-  { path: 'detail/:id', component: ProjectDetailComponent },
+  { path: 'Projects', component: ProjectComponent },
+
+  { path: 'video/:id', component: ProjectDetailComponent },
 
 
 

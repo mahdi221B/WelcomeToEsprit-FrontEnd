@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 //mvn spring-boot:run
 //  cd C:\Users\miled\AppData\Local\Google\Chrome\Application
 // chrome.exe --disable-web-security --user-data-dir=c:\my-chrome-data\data
+//C:\Users\miled\WelcomeToEsprit-FrontEnd
 
 @Injectable({
   providedIn: 'root'

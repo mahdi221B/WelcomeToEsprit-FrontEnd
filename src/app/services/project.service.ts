@@ -17,8 +17,8 @@ export class ProjectService {
     return this.http.get<any[]>('http://localhost:8088/WelcomeToEsprit/Project/getall')
   }
 
-  getVideoById(id: number): Observable<any> {
-    return this.http.get<Project>('http://localhost:8088/WelcomeToEsprit/Project/media/' + id);
+  getVideoById(id: any): Observable<any> {
+    return this.http.get<Project>('http://localhost:8088/WelcomeToEsprit/Project/get/' + id);
   }
 
 }
