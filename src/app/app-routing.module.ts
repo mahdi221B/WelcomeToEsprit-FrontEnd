@@ -12,6 +12,7 @@ import { AddUpdatePostComponent } from './components/posts/add-update-post/add-u
 import { DetailPostComponent } from './components/posts/detail-post/detail-post.component';
 import { CommentsComponent } from './components/comments/comments/comments.component';
 import { AddUpdateCommentsComponent } from './components/comments/add-update-comments/add-update-comments.component';
+import { MessageComponent } from './components/message/message.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home/dashborad', pathMatch: 'full' },
@@ -33,7 +34,7 @@ const routes: Routes = [
       { path: 'ads/:id', component: DetailAdvertisementComponent }, 
     ]
   },
-  
+  { path: 'message/:id', component: MessageComponent },
   { path: 'forum', component: ForumComponent },
   { path: '**', component: NotFoundComponent }
 ];

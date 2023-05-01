@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SideBarComponentComponent } from './side-bar-component/side-bar-component.component';
@@ -32,6 +31,9 @@ import { PostComponent } from './components/posts/post/post.component';
 import { DetailPostComponent } from './components/posts/detail-post/detail-post.component';
 import { AddUpdateCommentsComponent } from './components/comments/add-update-comments/add-update-comments.component';
 import { CommentsComponent } from './components/comments/comments/comments.component';
+import { WebSocketService } from './web-socket.service';
+import { MessageComponent } from './components/message/message.component';
+import { TimeAgoPipe } from './pipes/time-ago.pipe';
 
 
 
@@ -54,6 +56,8 @@ import { CommentsComponent } from './components/comments/comments/comments.compo
     DetailPostComponent,
     AddUpdateCommentsComponent,
     CommentsComponent,
+    MessageComponent,
+    TimeAgoPipe,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +76,7 @@ import { CommentsComponent } from './components/comments/comments/comments.compo
     ScrollingModule,
     InfiniteScrollModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+   providers: [WebSocketService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
