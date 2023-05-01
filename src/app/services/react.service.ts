@@ -17,8 +17,8 @@ export class ReactService {
 
   constructor(private http: HttpClient) { }
 
-  addOrUpdate(react: React, idUser: number, idPost: number): Observable<React> {
-    return this.http.post<React>(`${this.baseUrl}/addOrUpdate/${idUser}/${idPost}`,React);
+  addOrUpdate(react: string, idUser: number, idPost: number): Observable<React> {
+    return this.http.post<React>(`${this.baseUrl}/addOrUpdate/${react}/${idUser}/${idPost}`,React);
   }
 
 

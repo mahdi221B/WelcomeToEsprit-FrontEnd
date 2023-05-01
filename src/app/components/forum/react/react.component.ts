@@ -43,8 +43,7 @@ export class ReactComponent implements OnInit, OnDestroy {
     return `assets/reactions/${emoji}.png`
   }
   reactPost(emoji:string) {
-    this.react.reaction=emoji
-    this.reactService.addOrUpdate(this.react,this.userId,this.itemId).subscribe({})
+    this.reactService.addOrUpdate(emoji,this.userId,this.itemId).subscribe({})
   }
 
   ngOnDestroy(): void {
