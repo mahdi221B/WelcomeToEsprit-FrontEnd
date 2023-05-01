@@ -15,17 +15,12 @@
     "@angular/compiler": "^15.2.0",
     "@angular/core": "^15.2.0",
     "@angular/forms": "^15.2.0",
-    "@angular/material": "^15.2.8",
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.2.1",
     "jquery": "^3.6.4",
-<<<<<<< HEAD
-=======
-    "ngx-infinite-scroll": "^15.0.0",
->>>>>>> 966c8b2a04b91a797a2e0c0521fee62509342e90
     "ngx-pagination": "^6.0.3",
     "rxjs": "~7.8.0",
     "tinymce": "^6.4.1",
@@ -37,7 +32,6 @@
     "@angular/cli": "~15.2.5",
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
-    "@types/lodash": "^4.14.194",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
