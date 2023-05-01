@@ -1,3 +1,5 @@
+import { Profil } from "./profil.model";
+
 export class User {
     lastName!: string;
     firstName!: string;
@@ -6,4 +8,5 @@ export class User {
     password!: string;
     picture!: string;
     availability!: string;
+    profil!:Profil;
   }

@@ -104,28 +104,21 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/blocks">
-        <i class="icon-paper menu-icon"></i>
-        <span class="menu-title">Blocks</span>
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic2">
+        <i class="icon-layout menu-icon"></i>
+        <span class="menu-title">Menu</span>
+        <i class="menu-arrow"></i>
       </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/classrooms">
-        <i class="icon-paper menu-icon"></i>
-        <span class="menu-title">Classrooms</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/admissions">
-        <i class="icon-paper menu-icon"></i>
-        <span class="menu-title">Admission</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/equipements">
-        <i class="icon-paper menu-icon"></i>
-        <span class="menu-title">Equipement</span>
-      </a>
+      <div class="collapse" id="ui-basic2">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" routerLink="/blocks">Block</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/classrooms">Classroom</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/equipements">Equipement</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/admissions">Adimission</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/list-profile">Profile</a></li>
+          
+        </ul>
+      </div>
     </li>
   </ul>
 </nav>

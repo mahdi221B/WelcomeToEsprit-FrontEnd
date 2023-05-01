@@ -23,6 +23,8 @@ import { AddEquipmentComponent } from './equipement/add-equipement/add-equipemen
 import { UpdateEquipementComponent } from './equipement/update-equipement/update-equipement.component';
 import { AdmissionComponent } from './admission/admission.component';
 import { ClassroomFilterPipe } from './pipes/classroom-filter.pipe';
+import { ProfileComponent } from './profile/profile.component';
+import { ListProfileComponent } from './profile/list-profile/list-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +46,8 @@ import { ClassroomFilterPipe } from './pipes/classroom-filter.pipe';
     UpdateEquipementComponent,
     AdmissionComponent,
     ClassroomFilterPipe,
+    ProfileComponent,
+    ListProfileComponent,
     
   ],
   imports: [

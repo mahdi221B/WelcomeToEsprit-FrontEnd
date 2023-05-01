@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Education</th>
+            <th>Diplomas</th>
+            <th>Certification</th>
+            <th>Work Experience</th>
+            <th>Student Level</th>
+            <th>Interest</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+          </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let profile of profilesList">
+                <tr *ngIf="profile.user">
+                  <td>{{ profile.education }}</td>
+                  <td>
+                    <img [src]="profile.diplomas" class="img-thumbnail" style="width: 100px; height: 100px;" (click)="openImage(profile.diplomas)">
+                  </td>
+                  <td>
+                    <img [src]="profile.certification" class="img-thumbnail" style="width: 100px; height: 100px;" (click)="openImage(profile.certification)">
+                  </td>
+                  <td>
+                    <img [src]="profile.workExperience" class="img-thumbnail" style="width: 100px; height: 100px;" (click)="openImage(profile.workExperience)">
+                  </td>
+                  <td>{{ profile.studentLevel }}</td>
+                  <td>{{ profile.interest }}</td>
+                  <td>{{ profile.user.firstName }}</td>
+                  <td>{{ profile.user.lastName }}</td>
+                </tr>
+              </ng-container>
+              
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

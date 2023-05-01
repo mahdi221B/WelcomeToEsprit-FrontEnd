@@ -14,6 +14,8 @@ import { EquipmentComponent } from './equipement/equipement.component';
 import { AddEquipmentComponent } from './equipement/add-equipement/add-equipement.component';
 import { UpdateEquipementComponent } from './equipement/update-equipement/update-equipement.component';
 import { AdmissionComponent } from './admission/admission.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ListProfileComponent } from './profile/list-profile/list-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -29,6 +31,8 @@ const routes: Routes = [
   {path:'addequipement',component:AddEquipmentComponent},
   {path:'updateequipement/:id',component:UpdateEquipementComponent},
   {path:'admissions',component:AdmissionComponent},
+  {path:'profile',component:ProfileComponent},
+  {path:'list-profile',component:ListProfileComponent},
 
 
 
