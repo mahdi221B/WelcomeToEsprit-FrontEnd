@@ -3,7 +3,8 @@ import { Team } from "./Team";
 
 export class Profil {
   id!: number;
- teamcaptain!:boolean;
+  teamcaptain!: boolean;
+  intrest !: string;
 
 
 }

@@ -9,6 +9,7 @@
                 <tr>
                   <th>Username</th>
                   <th>Role</th>
+                    <th>intrest</th>
                  <th>Team</th>
                   <th>Team captain </th>
 
@@ -21,6 +22,7 @@
                   
                   <td>{{ user.firstName }}</td>
                   <td><ng-container  *ngFor="let r of user.roles" >{{r.roleName}} , </ng-container></td>
+                     <td>{{ user.profil.intrest }}</td>
                  <td *ngIf="user.team">{{ user.team.name }}</td>
                  <td *ngIf="!user.team">only student have team</td>
                   <td *ngIf="user.profil.teamcaptain"> yes</td>
@@ -39,7 +41,7 @@
           <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
         </div>
       </div>
-
+<button class="btn btn-danger"  routerLink="/addevent">Add event</button>
 <!--
 <div class="d-flex justify-content-center">
     <pagination-controls

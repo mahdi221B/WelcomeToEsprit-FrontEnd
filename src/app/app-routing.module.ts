@@ -13,6 +13,7 @@ import { ProjectaddedsuccComponent } from './componnets/projectaddedsucc/project
 import { GetvideoComponent } from './componnets/getvideo/getvideo.component';
 import { ProjectDetailComponent } from './componnets/project-detail/project-detail.component';
 import { StatsComponent } from './componnets/stats/stats.component';
+import { AddeventComponent } from './componnets/addevent/addevent.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,6 +26,8 @@ const routes: Routes = [
   { path: 'stats', component: StatsComponent },
   { path: 'succ', component: GetvideoComponent },
   { path: 'Projects', component: ProjectComponent },
+  { path: 'addevent', component: AddeventComponent },
+
 
   { path: 'video/:id', component: ProjectDetailComponent },
 

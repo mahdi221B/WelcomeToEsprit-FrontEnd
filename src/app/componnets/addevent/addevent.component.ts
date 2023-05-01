@@ -12,6 +12,8 @@ export class AddeventComponent implements OnInit {
   constructor(private appEventService: AppEventService) { }
   appevent!: AppEvent;
   ngOnInit(): void {
+    this.appevent = new AppEvent();
+
   }
   public addEvent() {
     return this.appEventService.addEvent(this.appevent).subscribe((response) => {
