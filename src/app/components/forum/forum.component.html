@@ -820,7 +820,7 @@
                       </div>
                       <!-- footer -->
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary w-100" (click)="save()">
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-primary w-100" (click)="save()">
                           Post
                         </button>
                       </div>
@@ -1075,7 +1075,7 @@
                   />
                   <div>
                     <p class="m-0 fw-bold">John</p>
-                    <span class="text-muted fs-7">{{post.createdAt}}</span>
+                    <span class="text-muted fs-7">{{post.createdAt | timeAgo}}</span>
                   </div>
                 </div>
                 <!-- edit -->
@@ -1193,6 +1193,7 @@
                           "
                           data-bs-toggle="collapse"
                           data-bs-target="#collapsePost1"
+                          
                           aria-expanded="false"
                           aria-controls="collapsePost1"
                           (click)="showComments(post.id)"

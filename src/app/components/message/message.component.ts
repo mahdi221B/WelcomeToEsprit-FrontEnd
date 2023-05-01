@@ -24,7 +24,7 @@ export class MessageComponent implements OnInit{
   listConvo!:Conversations[];
   
 
-  constructor(private activeRoute:ActivatedRoute,private chatservice:ChatService, private element: ElementRef) { }
+  constructor(private activeRoute:ActivatedRoute,private chatservice:ChatService) { }
 
   ngOnInit() {
     this.chatservice.getMessagesByConversationIdAndUserId(this.userid).subscribe({
@@ -63,12 +63,7 @@ export class MessageComponent implements OnInit{
       this.message.content = ''; // clear the form
     }
   }
-  // loadChat() {
-  //   this.chatservice.getChatsById(parseInt(this.channelName)).subscribe({
-  //     next:(data) => 
-  //     this.receivedMessages= data
-  //   });
-  // }
+  
   loadChat() {
   this.chatservice.getChatsById(parseInt(this.channelName)).subscribe({
     next:(data) => {
@@ -76,32 +71,5 @@ export class MessageComponent implements OnInit{
       this.receivedMessages= data.sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
     }
   });
+ }
 }
-
-
-
-
-  // scrollDown(){
-  //   var container = this.element.nativeElement.querySelector("#chat");
-  //   container.scrollTop = container.scrollHeight;
-  // }
-  
-}
-  // sendMessage() {
-  //   this.stompClient.send('/current/resume',
-  //     {},
-  //     JSON.stringify(this.newMessage)
-  //   );
-  //   this.newMessage = "";
-  // }
-
-//   sendMessage(conversationId: string) {
-//   const headers = { 'conversationId': conversationId };
-//   const payload = JSON.stringify({ content: message });
-//   this.stompClient.send('/current/resume/' + conversationId, headers, payload)
-//     .subscribe((response:any) => {
-//       const receivedMessage = JSON.parse(response.body).content;
-//       console.log('Received message: ' + receivedMessage);
-//       this.receivedMessages.push(receivedMessage);
-//     });
-// }

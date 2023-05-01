@@ -1,24 +1,26 @@
-import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/model/Post';
 import { PostService } from 'src/app/services/post.service';
-import { Observable } from 'rxjs';
 import { ReactService } from 'src/app/services/react.service';
-import { React } from 'src/app/model/React';
 import { CommentsService } from 'src/app/services/comments.service';
 import { Comments } from 'src/app/model/Comment';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
+
 
 
 
 @Component({
   selector: 'app-forum',
   templateUrl: './forum.component.html',
-  styleUrls: ['./forum.component.css']
+  styleUrls: ['./forum.component.css'],
+  providers: [DatePipe]
+
 })
 export class ForumComponent implements OnInit{
   post!:Post; 
   comment!:Comments; 
-  id : number = 2;
+  id : number = 3;
   selectedFiles!: File[];
   //Display
   listPosts !:Post[]; // Define listPosts$ as an Observable<Post[]>
@@ -35,11 +37,16 @@ export class ForumComponent implements OnInit{
   ngOnInit(): void {
     this.post = new Post();
     this.comment = new Comments();
-    this.postService.getPosts(this.id).subscribe({
-      next:(data) => 
-      this.listPosts= data
-    });
+    this.getPosts();
     this.emojiList = this.reactService.emojiList
+  }
+
+  getPosts() {
+    this.postService.getPosts(this.id).subscribe({
+        next:(data) => {
+        this.listPosts= data.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+      }
+    });
   }
 
   onFilesSelected(event: any) {
@@ -50,11 +57,18 @@ export class ForumComponent implements OnInit{
     this.selectedFiles = event.target.files;
   }
   
-  save(){
-    this.postService.addWPostFiles(this.post, this.id, this.selectedFiles).subscribe({
-      next:()=>this.route.navigateByUrl('/forum')
-     });
-  }
+  save() {
+    if (this.selectedFiles && this.selectedFiles.length > 0) {
+      this.postService.addWPostFiles(this.post, this.id, this.selectedFiles).subscribe(() => {
+        this.getPosts();
+        this.post = new Post();
+        this.selectedFiles = [];
+      }, (error) => {
+        console.error(error);
+      });
+    }
+  }  
+
 
 
   showComments(i:number) {
@@ -65,8 +79,18 @@ export class ForumComponent implements OnInit{
   }
 
   writeComments(postId:number){
-    this.commentService.assignCommentToPost(this.comment, postId, this.id).subscribe({
-      next:()=>this.route.navigateByUrl('/forum')
-     });
+      if (this.comment.content.length > 0) {
+      this.commentService.assignCommentToPost(this.comment, postId, this.id).subscribe(
+      () => {
+        this.getPosts();
+        this.comment = new Comments();
+      },
+      (error) => { 
+        console.error(error);
+      }
+      );
+    }
   }
+
+  
 }
