@@ -23,6 +23,7 @@ import { MyteamComponent } from './myteam/myteam.component';
 import { ProjectaddedsuccComponent } from './projectaddedsucc/projectaddedsucc.component';
 import { GetvideoComponent } from './getvideo/getvideo.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { AddeventComponent } from './addevent/addevent.component';
 
 
 
@@ -43,6 +44,7 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
     ProjectaddedsuccComponent,
     GetvideoComponent,
     ProjectDetailComponent,
+    AddeventComponent,
   ],
   imports: [
           BrowserModule,

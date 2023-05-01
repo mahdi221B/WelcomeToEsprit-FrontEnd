@@ -105,12 +105,14 @@ export class ProjectaddedsuccComponent implements OnInit {
             ],
             borderWidth: 1
 
+
           }]
         },
         options: {
           scales: {
             y: {
-              beginAtZero: true
+              beginAtZero: true,
+
             }
           }
         }
