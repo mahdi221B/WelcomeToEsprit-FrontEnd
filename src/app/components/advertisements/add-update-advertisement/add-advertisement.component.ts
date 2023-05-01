@@ -43,11 +43,11 @@ export class AddAdvertisementComponent implements OnInit{
   saveOrUpdate() {
     if (this.isUpdate) {
       this.advertisementService.addAdvertisement(this.ad).subscribe({
-        next:()=>this.route.navigateByUrl('/ads')
+        next:()=>this.route.navigateByUrl('/home/ads')
       })
     } else {
       this.advertisementService.addAdvertisement(this.ad).subscribe({
-        next:()=>this.route.navigateByUrl('/ads')
+        next:()=>this.route.navigateByUrl('/home/ads')
       })
     }
   }
