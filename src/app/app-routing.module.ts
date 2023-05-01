@@ -25,7 +25,8 @@ const routes: Routes = [
   { path:'test', component : TestComponent},
    { path:'app', component : ApplicationFormComponent},
   { path:'list-offre', component : FrontOfficeOffreComponent},
-  { path:'rendez-vous/:id', component : RendezVousComponent},
+  // { path:'rendez-vous/:id', component : RendezVousComponent},
+  { path:'rendez-vous', component : RendezVousComponent},
   { path: '**', component: NotFoundComponent }
   
 ];
