@@ -69,26 +69,19 @@ export class ForumComponent implements OnInit{
     }
   }  
 
-
-
   showComments(i:number) {
     this.commentService.getCommentsByPost(i).subscribe({
       next:(data) => 
-      this.listComments= data,
-    });
+      this.listComments= data.sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
+    }); 
   }
 
   writeComments(postId:number){
-      if (this.comment.content.length > 0) {
-      this.commentService.assignCommentToPost(this.comment, postId, this.id).subscribe(
-      () => {
-        this.getPosts();
-        this.comment = new Comments();
-      },
-      (error) => { 
-        console.error(error);
-      }
-      );
+    if (this.comment.content.length > 0) {
+      this.commentService.assignCommentToPost(this.comment, postId, this.id).subscribe(() => {
+        this.showComments(postId);
+        this.comment.content="";
+      });
     }
   }
 

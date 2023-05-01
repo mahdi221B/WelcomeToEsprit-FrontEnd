@@ -10,7 +10,7 @@ import { React } from 'src/app/model/React';
   templateUrl: './react.component.html',
   styleUrls: ['./react.component.css']
 })
-export class ReactComponent implements OnInit, OnDestroy {
+export class ReactComponent implements OnInit {
   //Can be a post or comment
   @Input() itemId!: number;//postId
   @Input() userId!: number;//userId
@@ -20,20 +20,21 @@ export class ReactComponent implements OnInit, OnDestroy {
   showEmojis = false;
   emojiList!: string[];
   reactionCount: any;
-  userReaction: any;
+  userReaction!: React;
   subscription: any;
+
 
   constructor(private reactService: ReactService) { }
 
   ngOnInit() {
     this.react = new React();
-    this.emojiList = this.reactService.emojiList
-    this.subscription = this.reactService.getReactByUserIdAndPostId(this.userId, this.itemId)
-      .subscribe(reactions => {
-        this.reactionCount = this.reactService.countReactions(reactions)
-        this.userReaction = this.reactService.userReactions(this.userId, this.itemId)
-      })
+    this.emojiList = this.reactService.emojiList;
+    this.reactService.userReactions(this.userId, this.itemId).subscribe((result: React) => {
+      this.userReaction = result;
+    });
+    //this.reactionCount = this.reactService.countReactions(reactions)actions(reactions)
   }
+  
   //mouse leave and mouse eneter event
   toggleShow(bool:boolean) {
     this.showEmojis = bool;
@@ -46,7 +47,4 @@ export class ReactComponent implements OnInit, OnDestroy {
     this.reactService.addOrUpdate(emoji,this.userId,this.itemId).subscribe({})
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe() 
-  }
 }

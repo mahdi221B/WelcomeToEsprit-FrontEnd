@@ -845,7 +845,7 @@
             >
               <!-- btn -->
               <div>
-                <button class="btn rounded-pill btn-info">
+                <button class="btn rounded-pill btn-danger">
                   <i class="fas fa-video me-3"></i>Create Room
                 </button>
               </div>
@@ -1159,11 +1159,11 @@
                             justify-content-end
                           "
                           data-bs-toggle="collapse"
-                          data-bs-target="#collapsePost1"
+                          [attr.data-bs-target]="'#collapse' + post.id"
                           aria-expanded="false"
-                          aria-controls="collapsePost1"
+                          [attr.aria-controls]="'collapse' + post.id"
                         >
-                          <p class="m-0">{{post.comments.length}} Comments</p>
+                          <p class="m-0" (click)="showComments(post.id)">{{post.comments.length}} Comments</p>
                         </div>
                       </h2>
                       <hr/>
@@ -1192,10 +1192,10 @@
                             p-1
                           "
                           data-bs-toggle="collapse"
-                          data-bs-target="#collapsePost1"
+                          [attr.data-bs-target]="'#collapse' + post.id"
                           
                           aria-expanded="false"
-                          aria-controls="collapsePost1"
+                          [attr.aria-controls]="'collapse' + post.id"
                           (click)="showComments(post.id)"
                         >
                           <i class="fas fa-comment-alt me-3"></i>
@@ -1204,7 +1204,7 @@
                       </div>
                       <!-- comment expand -->
                       <div
-                        id="collapsePost1"
+                        [id]="'collapse' + post.id"
                         class="accordion-collapse collapse"
                         aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
@@ -1269,7 +1269,7 @@
                                   </li>
                                 </ul>
                               </div>
-                              <p class="fw-bold m-0">John</p>
+                              <p class="fw-bold m-0">{{comment.user.firstName}}</p>
                               <p class="m-0 fs-7 bg-gray p-2 rounded">
                                 {{comment.content}}
                               </p>
