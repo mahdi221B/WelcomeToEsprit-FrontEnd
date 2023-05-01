@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <video width="100%" height="auto" controls>
+        <source [src]="'http://localhost:8088/WelcomeToEsprit/Project/media/'+project.id" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h3>Add Note</h3>
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <input type="text" class="form-control" [(ngModel)]="note.comment" name="comment" required>
+    </div>
+    <div class="form-group">
+      <label for="softSkills">Soft Skills:</label>
+      <input type="number" class="form-control" [(ngModel)]="note.softSkils" name="softSkils" required>
+    </div>
+    <div class="form-group">
+      <label for="hardSkills">Hard Skills:</label>
+      <input type="number" class="form-control" [(ngModel)]="note.hardSkils" name="hardSkils" required>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="givemark()">Add Note</button>
+  </div>
+</div>
+<div class="card">
+  <!-- Comments section -->
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Comments</h4>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let n of project.notes">
+          <div class="d-flex justify-content-between">
+            <h6>{{n.comment}}</h6>
+          </div>
+           <h7 class="text-muted">{{n.user.firstName}}</h7> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

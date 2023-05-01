@@ -1,0 +1,19 @@
+
+<div>
+  <label>Start date:</label>
+  <input type="date" name="startDate" [(ngModel)]="appevent.startDate">
+</div>
+<div>
+  <label>End date:</label>
+  <input type="date" name="endDate" [(ngModel)]="appevent.endDate">
+</div>
+<div>
+  <label>Ceremony start date:</label>
+  <input type="date" name="ceremonyStartDate" [(ngModel)]="appevent.ceremonyStartDate">
+</div>
+<div>
+  <label>Ceremony end date:</label>
+  <input type="date" name="ceremonyEndDate" [(ngModel)]="appevent.ceremonyEndDate">
+</div>
+<br><br>
+<button class="btn btn-danger"  (click)="addEvent()">Add event</button>

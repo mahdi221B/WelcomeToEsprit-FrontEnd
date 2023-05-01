@@ -1,0 +1,35 @@
+<button class="btn btn-danger" (click)="createTeams()">Create Teams</button>
+<br><br>  
+
+
+
+  <div class="row">
+        <div class="col-12">
+          <div class="table-responsive">
+            <table class="display expandable-table" style="width:100%">
+              <thead>
+                <tr>
+                  <th>name</th>
+                  <th>budget</th>
+                  <th>department</th>
+                  <th>Note</th>
+                  <th> calculate  note </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let team of teams | paginate: { itemsPerPage: 5, currentPage: currentPage }">
+                  <td>{{ team.name }}</td>
+                  <td>{{ team.budget }}</td>
+                 <td>{{ team.department }}</td>
+                 <td>{{ team.noteTeam }}</td> 
+                 <td> <button class="btn btn-danger" (click)="givemark(team.id)" > calculate  mark </button> </td> 
+                
+                 
+                 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+        </div>
+      </div>
