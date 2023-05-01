@@ -1,0 +1,9 @@
+.list {
+    height: 500px;
+    width: 300px;
+    overflow-y: auto;
+  }
+
+  .item {
+    height: 50px;
+  }

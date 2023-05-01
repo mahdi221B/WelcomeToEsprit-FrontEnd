@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body d-flex align-items-center">
+        <p class="card-title flex-grow-1">Posts Table</p>
+        <button type="button" class="btn" routerLink="/home/post/add" style="background-color: #E60A14; color: #fff;">
+          <i class="fas fa-plus"></i>ADD
+        </button>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="table-responsive">
+            <table class="display expandable-table" style="width:100%">
+              <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>#HashTag</th>
+                    <th>Creation Date</th>
+                    <th>Location</th>
+                    <th colspan="4" style="text-align: center;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let post of listPosts | paginate: { itemsPerPage: 3, currentPage: currentPage }">
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.content }}</td>
+                    <td>{{ post.tags }}</td>
+                    <td>{{ post.createdAt }}</td>
+                    <td>Tunis</td>
+                    <td>
+                      <button type="submit" class="btn btn-info" (click)="getPostComments(post.id)">Comments</button>
+                    </td>
+                    <td>
+                      <button type="submit" class="btn btn-danger" (click)="delete(post.id)">Delete</button>
+                    </td>
+                    <td>
+                      <button type="submit" class="btn btn-info" (click)="update(post.id)">Update</button>
+                    </td>
+                    <td>
+                      <button type="submit" class="btn btn-info" (click)="detail(post.id)">Detail</button>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+          <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

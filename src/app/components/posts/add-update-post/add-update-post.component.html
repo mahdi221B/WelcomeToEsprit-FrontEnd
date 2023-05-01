@@ -1,0 +1,28 @@
+<form >
+    <div class="row">
+      <div class="col-md-12 grid-margin">
+        <div class="card rounded">
+          <div class="card-header">
+            <h4 class="card-title">ADD POST</h4>
+          </div>
+          <div class="card-body">
+            <div class="form-group text-center">
+                <input type="text" class="form-control form-control-sm w-75 mx-auto" name="title" [(ngModel)]="post.title" placeholder="Title" required #titleInput>
+            </div>
+            <div class="form-group text-center">
+              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="content" [(ngModel)]="post.content" placeholder="Content">
+            </div>
+            <div class="form-group text-center">
+              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="tags" [(ngModel)]="post.tags" placeholder="#HashTags">
+            </div>
+            <div class="form-group text-center">
+              <input type="file" (change)="onFilesSelected($event)" multiple>
+            </div>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-danger" (click)="saveOrUpdate()">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>

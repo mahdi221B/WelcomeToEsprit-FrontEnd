@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <p class="card-title flex-grow-1">Post N°{{id}} List comments</p>
+          <button type="button" class="btn" routerLink="/home/comments/add" style="background-color: #E60A14; color: #fff;">
+            <i class="fas fa-plus"></i>ADD
+          </button>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="table-responsive">
+              <table class="display expandable-table" style="width:100%">
+                <thead>
+                    <tr>
+                      <th>Content</th>
+                      <th>Creation Date</th>
+                      <th colspan="2" style="text-align: center;">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let comment of listComments | paginate: { itemsPerPage: 3, currentPage: currentPage }">
+                      <td>{{ comment.content }}</td>
+                      <td>{{ comment.createdAt }}</td>
+                      <td>Tunis</td>
+                      <td>
+                        <button type="submit" class="btn btn-danger" (click)="delete(comment.id)">Delete</button>
+                      </td>
+                      <td>
+                        <button type="submit" class="btn btn-info" (click)="update(comment.id)">Update</button>
+                      </td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
