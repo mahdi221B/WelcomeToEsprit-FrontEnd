@@ -31,11 +31,12 @@ export class TeamComponent implements OnInit {
     });
   }
 
-  public givemark(id: number) {
+
+  public calculmark(id: number) {
 
     const currentteam = this.teams.find((t) => { return t.id === id })
     if (currentteam) {
-      this.teamService.assignmark(currentteam.id, currentteam).subscribe(
+      this.teamService.calculmark(currentteam.id, currentteam).subscribe(
         (response) => {
           console.log(response);
 

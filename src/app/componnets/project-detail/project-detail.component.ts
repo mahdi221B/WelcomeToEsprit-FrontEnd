@@ -5,6 +5,7 @@ import { Project } from '../../model/Project';
 import { NoteService } from '../../services/note.service';
 import { Note } from '../../model/Note';
 
+
 @Component({
   selector: 'app-project-detail',
   templateUrl: './project-detail.component.html',
