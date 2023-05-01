@@ -23,6 +23,7 @@ import { QuestionComponent } from './components/questions/question/question.comp
 import { AddQuestionComponent } from './components/questions/add-question/add-question.component';
 import { AnswerComponent } from './components/answers/answer/answer.component';
 import { AddAnswerComponent } from './components/answers/add-answer/add-answer.component';
+import { UpdateAnswerComponent } from './components/answers/update-answer/update-answer.component';
 
 
 
@@ -50,6 +51,7 @@ import { AddAnswerComponent } from './components/answers/add-answer/add-answer.c
     
     AnswerComponent,
     AddAnswerComponent,
+    UpdateAnswerComponent,
 
     
   ],

@@ -33,5 +33,8 @@ export class AnswerService {
   }
 
  
+  getAnswerById(id: number): Observable<Answer> {
+    return this.http.get<Answer>(`${this.baseUrl}/get/${id}`);
+  }
 }
 

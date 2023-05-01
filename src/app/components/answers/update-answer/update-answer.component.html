@@ -1,0 +1,21 @@
+<form >
+    <div class="row">
+      <div class="col-md-12 grid-margin">
+        <div class="card rounded">
+          <div class="card-header">
+            <h4 class="card-title">Answers</h4>
+          </div>
+          <div class="card-body">
+            <div class="form-group text-center">
+                <input type="text" class="form-control form-control-sm w-75 mx-auto" name="chosenOption" [(ngModel)]="answer.chosenOption" placeholder="chosenOption">
+            </div>
+            
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-danger" (click)="save()">Submit</button>
+            </div>
+            <td>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>

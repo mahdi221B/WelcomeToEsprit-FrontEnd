@@ -18,9 +18,6 @@ export class InterviewService {
     return this.http.get<Interview[]>(`${this.baseUrl}/getall`);
   }
 
-  maxscore(): Observable<Interview[]> {
-    return this.http.get<Interview[]>(`${this.baseUrl}/maxscore`);
-  }
 
   addInterview(interview: Interview): Observable<Interview> {
     return this.http.post<Interview>(`${this.baseUrl}/add`, interview);
@@ -38,5 +35,7 @@ export class InterviewService {
     return this.http.delete<void>(`${this.baseUrl}/delete/${id}`);
   }
 
+  
+  
  
 }

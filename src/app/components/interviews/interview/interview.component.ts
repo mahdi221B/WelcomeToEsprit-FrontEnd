@@ -34,7 +34,8 @@ export class InterviewComponent  implements OnInit {
       this.listInterview = this.listInterview.filter((p)=>p.id != id)
     })
   }
+
   
-  
+ 
 }
 

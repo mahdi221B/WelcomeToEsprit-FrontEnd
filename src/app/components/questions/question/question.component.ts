@@ -23,8 +23,8 @@ export class QuestionComponent implements OnInit {
     })
   }
 
-  update(id: number) {
-    this.route.navigateByUrl(`/home/question/update/${id}`);
+  update(idQuestion: number) {
+    this.route.navigateByUrl(`/home/question/update/${idQuestion}`);
   }
 
   delete(idQuestion: number){

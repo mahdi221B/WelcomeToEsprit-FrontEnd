@@ -29,8 +29,8 @@ export class UpdateQuestionComponent implements OnInit {
   }
 
   save(){
-    this.reclamationService.updateAndDeleteReclamation(this.reclamation,this.id).subscribe({
-      next:()=>this.route.navigateByUrl('/home/reclamation')
+    this.questionService.updateQuestion(this.question,this.id).subscribe({
+      next:()=>this.route.navigateByUrl('/home/question')
     })
 }
 

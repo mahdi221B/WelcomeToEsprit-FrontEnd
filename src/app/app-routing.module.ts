@@ -14,6 +14,7 @@ import { AddQuestionComponent } from './components/questions/add-question/add-qu
 import { UpdateQuestionComponent } from './components/questions/update-question/update-question.component';
 import { AnswerComponent } from './components/answers/answer/answer.component';
 import { AddAnswerComponent } from './components/answers/add-answer/add-answer.component';
+import { UpdateAnswerComponent } from './components/answers/update-answer/update-answer.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
       { path: 'reclamation/add', component: AddReclamationComponent },
       { path: 'reclamation/update/:id', component: UpdateReclamationComponent },
        { path: 'interview/update/:id', component: UpdateInterviewComponent },
+       { path: 'interview/update/:id', component: UpdateInterviewComponent },
        { path: 'interview/add', component: AddInterviewComponent },
       { path: 'interview', component: InterviewComponent },
       { path: 'question', component: QuestionComponent },
@@ -36,6 +38,7 @@ const routes: Routes = [
       { path: 'question/update/:id', component: UpdateQuestionComponent },
       { path: 'answer', component: AnswerComponent },
       { path: 'answer/add', component: AddAnswerComponent },
+      { path: 'answer/update/:id', component: UpdateAnswerComponent },
      
      
 

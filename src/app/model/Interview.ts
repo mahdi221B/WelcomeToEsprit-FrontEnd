@@ -9,6 +9,6 @@ export class Interview {
     professionalismScore!: number;
     emailAddress!:String;
     candidatType!:String;
-    
+    score!:number;
   }
   
