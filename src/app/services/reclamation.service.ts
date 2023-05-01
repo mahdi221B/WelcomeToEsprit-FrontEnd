@@ -29,4 +29,7 @@ export class ReclamationService {
   getReclamationById(id: number): Observable<Reclamation> {
     return this.http.get<Reclamation>(`${this.baseUrl}/get/${id}`);
   }
+  deleteReclamation(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/delete/${id}`);
+  }
 }

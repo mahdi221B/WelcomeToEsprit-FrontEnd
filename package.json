@@ -21,6 +21,7 @@
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.4",
     "ngx-pagination": "^6.0.3",
+    "ngx-qrcode": "^0.1.0-rc.1",
     "rxjs": "~7.8.0",
     "tinymce": "^6.4.1",
     "tslib": "^2.3.0",

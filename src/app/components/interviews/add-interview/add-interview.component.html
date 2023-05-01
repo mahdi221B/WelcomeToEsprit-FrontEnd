@@ -1,0 +1,44 @@
+<form >
+    <div class="row">
+      <div class="col-md-12 grid-margin">
+        <div class="card rounded">
+          <div class="card-header">
+            <h4 class="card-title">INTERVIEW</h4>
+          </div>
+          <div class="card-body">
+            <div class="form-group text-center">
+                <input type="text" class="form-control form-control-sm w-75 mx-auto" name="interviewer" [(ngModel)]="interview.interviewer" placeholder="interviewer">
+            </div>
+            <div class="form-group text-center">
+                <input type="text" class="form-control form-control-sm w-75 mx-auto" name="interviewee" [(ngModel)]="interview.interviewee" placeholder="interviewee">
+            </div>
+            <div class="form-group text-center">
+                <input type="text" class="form-control form-control-sm w-75 mx-auto" name="format" [(ngModel)]="interview.format" placeholder="format">
+            </div>
+            <div class="form-group text-center">
+                <input type="text" class="form-control form-control-sm w-75 mx-auto" name="Feedback" [(ngModel)]="interview.Feedback" placeholder="Feedback">
+            </div>
+            
+            <div class="form-group text-center">
+                <input type="text" class="form-control form-control-sm w-75 mx-auto" name="communicationScore" [(ngModel)]="interview.communicationScore" placeholder="communicationScore">
+              </div>
+              <div class="form-group text-center">
+                <input type="text" class="form-control form-control-sm w-75 mx-auto" name="technicalScore" [(ngModel)]="interview.technicalScore" placeholder="technicalScore">
+              </div>
+              <div class="form-group text-center">
+                <input type="text" class="form-control form-control-sm w-75 mx-auto" name="professionalismScore" [(ngModel)]="interview.professionalismScore" placeholder="professionalismScore">
+              </div>
+              <div class="form-group text-center">
+                <input type="text" class="form-control form-control-sm w-75 mx-auto" name="emailAddress" [(ngModel)]="interview.emailAddress" placeholder="emailAddress">
+              </div>
+              <div class="form-group text-center">
+                <input type="text" class="form-control form-control-sm w-75 mx-auto" name="candidatType" [(ngModel)]="interview.candidatType" placeholder="candidatType">
+              </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-danger" (click)="save()">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>

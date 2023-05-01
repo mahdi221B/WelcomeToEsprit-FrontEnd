@@ -15,6 +15,18 @@ import { AddReclamationComponent } from './components/reclamations/add-reclamati
 import { ReclamationComponent } from './components/reclamations/reclamation/reclamation.component';
 import { UpdateReclamationComponent } from './components/reclamations/update-reclamation/update-reclamation.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AddInterviewComponent } from './components/interviews/add-interview/add-interview.component';
+import { UpdateInterviewComponent } from './components/interviews/update-interview/update-interview.component';
+import { InterviewComponent } from './components/interviews/interview/interview.component';
+import { UpdateQuestionComponent } from './components/questions/update-question/update-question.component';
+import { QuestionComponent } from './components/questions/question/question.component';
+import { AddQuestionComponent } from './components/questions/add-question/add-question.component';
+import { AnswerComponent } from './components/answers/answer/answer.component';
+import { AddAnswerComponent } from './components/answers/add-answer/add-answer.component';
+
+
+
+
 
 
 @NgModule({
@@ -28,14 +40,26 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FooterComponent,
     AddReclamationComponent,
     ReclamationComponent,
-    UpdateReclamationComponent
+    UpdateReclamationComponent,
+    AddInterviewComponent,
+    UpdateInterviewComponent,
+    InterviewComponent,
+    UpdateQuestionComponent,
+    QuestionComponent,
+    AddQuestionComponent,
+    
+    AnswerComponent,
+    AddAnswerComponent,
+
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

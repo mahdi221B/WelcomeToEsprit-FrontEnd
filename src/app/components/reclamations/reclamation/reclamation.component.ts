@@ -26,5 +26,10 @@ export class ReclamationComponent implements OnInit {
   update(id: number) {
     this.route.navigateByUrl(`/home/reclamation/update/${id}`);
   }
-
+  delete(id: number){
+    this.reclamationService.deleteReclamation(id).subscribe({
+      next:() => 
+      this.listReclamation = this.listReclamation.filter((p)=>p.id != id)
+    })
+  }
 }
