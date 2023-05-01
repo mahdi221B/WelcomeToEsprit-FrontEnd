@@ -12,6 +12,7 @@ import { ListeClassifierCondidatsComponent } from './components/liste-classifier
 import { ListAvailabtityComponent } from './components/availablity/list-availabtity/list-availabtity.component';
 import { FrontOfficeOffreComponent } from './components/front-office-offre/front-office-offre.component';
 import { RendezVousComponent } from './components/rendez-vous/rendez-vous.component';
+import { FullCalendarComponent } from './components/availablity/full-calendar/full-calendar.component';
 
 const routes: Routes = [
  { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path:'list-offre', component : FrontOfficeOffreComponent},
   // { path:'rendez-vous/:id', component : RendezVousComponent},
   { path:'rendez-vous', component : RendezVousComponent},
+  { path:'FullCalendar', component : FullCalendarComponent},
   { path: '**', component: NotFoundComponent }
   
 ];

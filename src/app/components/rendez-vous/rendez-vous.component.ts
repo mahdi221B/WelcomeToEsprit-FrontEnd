@@ -46,7 +46,4 @@ export class RendezVousComponent implements OnInit {
     
 }
 
-
-
-
 }

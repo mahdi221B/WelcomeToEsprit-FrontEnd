@@ -24,6 +24,18 @@ import { AddAvailabtityComponent } from './components/availablity/add-availabtit
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FrontOfficeOffreComponent } from './components/front-office-offre/front-office-offre.component';
 import { RendezVousComponent } from './components/rendez-vous/rendez-vous.component';
+import { FullCalendarComponent } from './components/availablity/full-calendar/full-calendar.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
+
+
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -46,15 +58,22 @@ import { RendezVousComponent } from './components/rendez-vous/rendez-vous.compon
     ListAvailabtityComponent,
     AddAvailabtityComponent,
     FrontOfficeOffreComponent,
-    RendezVousComponent
+    
+    RendezVousComponent,
+    FullCalendarComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    FlatpickrModule.forRoot(),
+    
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [],
   bootstrap: [AppComponent]
