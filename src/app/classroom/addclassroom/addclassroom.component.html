@@ -1,0 +1,36 @@
+<form >
+    <div class="row">
+      <div class="col-md-12 grid-margin">
+        <div class="card rounded">
+          <div class="card-header">
+            <h4 class="card-title">ADD bloc</h4>
+          </div>
+          <div class="card-body">
+           
+            <div class="form-group text-center">
+              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="roomnumber" [(ngModel)]="clasroom.roomnumber"    placeholder="roomnumber">
+            </div>
+            <div class="form-group text-center">
+              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="floornumber" [(ngModel)]="clasroom.floornumber" placeholder="floornumber">
+            </div>
+            <div class="form-group text-center">
+              <input type="text" class="form-control form-control-sm w-75 mx-auto" name="capacity" [(ngModel)]="clasroom.capacity" placeholder="capacity">
+            </div>
+            <div class="form-group text-center">
+                <input type="text" class="form-control form-control-sm w-75 mx-auto" name="status" [(ngModel)]="clasroom.status" placeholder="status">
+              </div>
+
+              <div class="form-group text-center">
+                <select class="form-control form-control-sm w-75 mx-auto" name="block" [(ngModel)]="idBlock">
+                  
+                  <option *ngFor="let block of blocks" [ngValue]="block.id">{{ block.name }}</option>
+                </select>
+              </div>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-danger" (click)="addclassrooms()">add classroom</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>

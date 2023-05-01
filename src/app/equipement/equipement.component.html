@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="header">
+      <button class="btn btn-danger" routerLink="/addequipement" style="background-color: #E60A14; color: #fff">Add</button>
+    </div>
+    <div class="table-responsive">
+      <table class="display expandable-table" style="width:100%">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Quantity</th>
+            <th>Purchase Date</th>
+            <th>Cost</th>
+            <th>Classroom</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let equipment of equipmentsList">
+            <td>{{ equipment.id }}</td>
+            <td>{{ equipment.type }}</td>
+            <td>{{ equipment.name }}</td>
+            <td>{{ equipment.description }}</td>
+            <td>{{ equipment.status }}</td>
+            <td>{{ equipment.quantity }}</td>
+            <td>{{ equipment.purshaseDate | date:'yyyy-MM-dd' }}</td>
+            <td>{{ equipment.cost }}</td>
+            <td *ngIf="equipment.classroom; else noClass">
+                <ng-container *ngIf="equipment.classroom.block; else onlyRoomNumber">
+                  {{ equipment.classroom.block.name }}-{{ equipment.classroom.roomnumber }}
+                </ng-container>
+                <ng-template #onlyRoomNumber>{{ equipment.classroom.roomnumber }}</ng-template>
+            </td>
+              
+            <td><button class="btn btn-danger" (click)="deleteEquipment(equipment.id)">Delete</button></td>
+            <td><a class="btn btn-danger" [routerLink]="['/updateequipement', equipment.id]">Update</a></td>
+          </tr>
+          <ng-template #noClass>
+            <td>null</td>
+          </ng-template>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

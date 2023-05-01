@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="header">
+    <button class="btn btn-danger" routerLink="/addclassrooms" style="background-color: #E60A14; color: #fff">Add</button>
+    <button class="btn btn-danger ml-2" (click)="exportToPDF()" style="background-color: #E60A14; color: #fff">
+      <i class="fas fa-file-pdf"></i> Export to PDF
+    </button>    
+    <button class="btn btn-success" (click)="exportToExcel()" style="background-color: #28a745; color: #fff; margin-left: 10px">Export to Excel</button>
+  </div>
+  <div class="search-container" style="margin-top: 20px; margin-bottom: 20px;">
+    <input [(ngModel)]="searchText" class="form-control" placeholder="Search..." style="width: 50%; margin: auto; border-radius: 25px;"/>
+  </div>
+  <div class="table-responsive">
+    <table id="classroom-table" class="display expandable-table" style="width:100%">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>roomnumber</th>
+          <th>floornumber</th>
+          <th>capacity</th>
+          <th>status</th>
+          <th>block</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let classroom of clasroomsList | classroomFilter:searchText">
+          <td>{{ classroom.id }}</td>
+          <td>{{ classroom.roomnumber }}</td>
+          <td>{{ classroom.floornumber }}</td>
+          <td>{{ classroom.capacity }}</td>
+          <td>{{ classroom.status }}</td>
+          <td *ngIf="classroom.block; else noBlock">{{ classroom.block.name }}</td>
+          <td><button class="btn btn-danger" (click)="deleteClassroom(classroom.id)">Delete</button></td>
+          <td><a class="btn btn-danger" [routerLink]="['/updateclassrooms', classroom.id]">Update</a></td>
+          
+        </tr>
+        <ng-template #noBlock>
+          <td>null</td>
+        </ng-template>
+      </tbody>
+    </table>
+  </div>
+</div>

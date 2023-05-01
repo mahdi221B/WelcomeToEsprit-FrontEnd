@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="table-responsive">
+      <table class="display expandable-table" style="width:100%">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Student</th>
+            <th>Teacher</th>
+            <th>Classroom</th>
+            <th>Date</th>
+            <th>Admission Result</th>
+            <th>Admission Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let admission of admissionsList">
+            <td>{{ admission.id }}</td>
+            <td>{{ admission.student.firstName }} {{ admission.student.lastName }}</td>
+            <td>{{ admission.teacher.firstName }} {{ admission.teacher.lastName }}</td>
+            <td *ngIf="admission.classroom; else noClass">
+              <ng-container *ngIf="admission.classroom.block; else onlyRoomNumber">
+                {{ admission.classroom.block.name }}-{{ admission.classroom.roomnumber }}
+              </ng-container>
+              <ng-template #onlyRoomNumber>{{ admission.classroom.roomnumber }}</ng-template>
+            </td>
+            <td>{{ admission.date | date:'yyyy-MM-dd' }}</td>
+            <td>{{ admission.admissionResult }}</td>
+            <td>{{ admission.admissionType }}</td>
+            <td *ngIf="admission.admissionResult == 'PENDING'; else noAction">
+              <button class="btn btn-success" (click)="acceptAdmission(admission.id)">Accept</button>
+              <button class="btn btn-danger" (click)="rejectAdmission(admission.id)">Reject</button>
+            </td>
+            <ng-template #noAction>
+              <td>-</td>
+            </ng-template>
+          </tr>
+          <ng-template #noClass>
+            <td>null</td>
+          </ng-template>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
