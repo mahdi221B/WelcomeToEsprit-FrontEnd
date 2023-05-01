@@ -30,7 +30,7 @@ export class ProjectDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    localStorage.setItem('iduser', '41'),
+    localStorage.setItem('iduser', '42'),
 
       this.projectService.getVideoById(this.id).subscribe(
         project => this.project = project,
