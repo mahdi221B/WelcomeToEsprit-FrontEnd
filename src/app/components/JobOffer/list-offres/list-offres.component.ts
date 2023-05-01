@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApplicationForm } from 'src/app/model/applicationForm';
 import { JobOffer } from 'src/app/model/job-offer';
+import { statistique } from 'src/app/model/statistique';
 import { JobOfferServiceService } from 'src/app/recruitment-service/job-offer-service.service';
+import { statistiqueservice } from 'src/app/recruitment-service/statistiqueservice';
 
 @Component({
   selector: 'app-list-offres',
@@ -11,6 +13,7 @@ import { JobOfferServiceService } from 'src/app/recruitment-service/job-offer-se
 })
 export class ListOffresComponent implements OnInit {
 listOffers!: JobOffer[]
+listStatistique ! :statistique[];
   currentPage = 1; 
   showModal = false;
 
@@ -23,7 +26,7 @@ listcandidat! : ApplicationForm[]  ;
   
 
 
-constructor(private jobofferservice:JobOfferServiceService,  private route:Router){}
+constructor(private jobofferservice:JobOfferServiceService,private statistiqueservices:statistiqueservice , private route:Router){}
 
   ngOnInit(): void {
     this.jobofferservice.getJobOffers().subscribe(
@@ -60,6 +63,9 @@ constructor(private jobofferservice:JobOfferServiceService,  private route:Route
       
     }) 
 
+
+
+
     
     this.jobofferservice.getJobOffer(this.idJobOffer).subscribe((data)=>{
       this.listcandidat =data.applicationForms;
@@ -88,6 +94,15 @@ constructor(private jobofferservice:JobOfferServiceService,  private route:Route
   }
 
 
+  getstatistique(){
+    this.statistiqueservices.getstatistique().subscribe(
+      res=>{
+        console.log("res",res);
+        this.listStatistique=res
+      }
+    )
+  
+  }
 
   // addJob():void{
   //    console.log(this.offerJob);

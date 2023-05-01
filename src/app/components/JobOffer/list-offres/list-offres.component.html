@@ -4,6 +4,13 @@
  </button>
 
 <button (click)="displayCondidat()" >Dispaly condidats</button>
+
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter4" (click)="getstatistique()"   >
+  statistiques
+ </button>
+
+
+
 <!-- Button trigger modal -->
 
 
@@ -46,6 +53,8 @@
                       <button type="button" class="btn btn-danger"  (click)="deleteOffre(offer.idOffre)" >
                         Delete
                        </button>
+                       
+
   
                     </td>
                    </tr>
@@ -212,6 +221,36 @@
             <td>{{c.note}}</td>
             <td>{{c.motivationLetter}}</td>
             <td>{{c.email}}</td>
+           </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal4 -->
+<div class="modal fade"  id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="width: 1000px;">
+
+      <div class="modal-body">
+        <table class="display expandable-table" style="width: auto">
+          <thead>
+            <tr>
+              <th>specialite</th>
+              <th>nombres des Offres</th>
+              <th>nombres des Candidats</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let c of listStatistique">
+           <tr>
+            <td>{{c.specialite}}</td>
+            <td>{{c.nbOffres}}</td>
+            <td>{{c.nbCandidats}}</td>
+           
            </tr>
 
           </tbody>
