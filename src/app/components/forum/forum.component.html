@@ -801,16 +801,26 @@
                             </div>
                             <!-- text -->
                             <div>
-                              <textarea
+                              <textarea placeholder="What do you wanna talk about ?"
                                 cols="30"
                                 rows="5"
-                                class="form-control border-0"
-                                name="content" [(ngModel)]="post.content"
-                              ></textarea>
+                                class="form-control"
+                                name="content" 
+                                [(ngModel)]="post.content">
+                              </textarea>
                             </div>
+                          <br>
+                            <div>
+                              <input type="text" class="form-control" name="tags" [(ngModel)]="post.tags" placeholder="#HashTags">
+                            </div>
+                          <br>
+                            <div>
+                              <input type="text" class="form-control" name="locationName" [(ngModel)]="post.locationName" placeholder="Event location">
+                            </div>
+                            <br>
                             <!-- uploadfile -->
                             <div>
-                              <input type="file" (change)="onFilesSelected($event)" multiple>
+                              <input type="file" class="form-control form-control-sm w-75 mx-auto" (change)="onFilesSelected($event)" multiple>
                             </div>
                            </form>
                           </div>
