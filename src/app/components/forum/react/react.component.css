@@ -1,4 +1,4 @@
- /* .wrapper {
+ .wrapper {
   position: relative;
   padding: 20px;
 }
@@ -6,12 +6,12 @@
 .wrapper img {
   width: 70px;
   cursor: pointer;
-  transition: transform 250ms ease;
+  transition: transform 200ms ease;
 }
 
 .wrapper img:hover {
   transform: scale(2);
-  transition: transform 250ms ease;
+  transition: transform 200ms ease;
 }
 
 .like {
@@ -48,4 +48,4 @@
   position: relative;
   bottom: -10px;
   width: 32px;
-} */
+}

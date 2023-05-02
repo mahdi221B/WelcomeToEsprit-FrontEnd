@@ -1143,7 +1143,7 @@
                         <i class="text-danger fab fa-gratipay"></i>
                       <i class="text-warning fas fa-grin-squint"></i>
                     </div>  
-                    <p class="m-0 text-muted fs-7">{{post.reactions.length}} People Reacted</p>
+                    <p class="m-0 text-muted fs-7" *ngIf=" post.reactions.length > 0">{{post.reactions.length}} People Reacted</p>
                   </div>
                   <!-- comments start-->
                   <div class="accordion" id="accordionExample">
@@ -1163,7 +1163,7 @@
                           aria-expanded="false"
                           [attr.aria-controls]="'collapse' + post.id"
                         >
-                          <p class="m-0" (click)="showComments(post.id)">{{post.comments.length}} Comments</p>
+                          <p class="m-0" (click)="showComments(post.id)" *ngIf=" post.comments.length > 0">{{post.comments.length}} Comments</p>
                         </div>
                       </h2>
                       <hr/>

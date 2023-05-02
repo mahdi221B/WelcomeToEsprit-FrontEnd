@@ -39,17 +39,19 @@ export class ReactComponent implements OnInit {
   emojiPath(emoji:string) {
     return `assets/reactions/${emoji}.png`
   }
+  getIt(){
+    this.reactService.getReactById(this.userReaction.id).subscribe((result: React) => {
+      this.userReaction = result;
+    });
+  }
   reactPost(emoji:string) {
-    this.reactService.addOrUpdate(emoji,this.userId,this.itemId).subscribe({})
-    if (this.userReaction) {
-      this.reactService.getReactById(this.userReaction.id).subscribe((result: React) => {
-        this.userReaction = result;
-      });
-    } else {
       this.reactService.addOrUpdate(emoji,this.userId,this.itemId).subscribe((result: React) => {
         this.userReaction = result;
-      });
+      },
+      () => {
+        this.getIt();
+      }
+      );
     }
-  }
 
 }
