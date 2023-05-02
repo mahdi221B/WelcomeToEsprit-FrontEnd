@@ -32,19 +32,24 @@ export class ReactComponent implements OnInit {
     this.reactService.userReactions(this.userId, this.itemId).subscribe((result: React) => {
       this.userReaction = result;
     });
-    //this.reactionCount = this.reactService.countReactions(reactions)actions(reactions)
   }
-  
-  //mouse leave and mouse eneter event
   toggleShow(bool:boolean) {
     this.showEmojis = bool;
   }
-  //Give us back the emoji path within the folder
   emojiPath(emoji:string) {
     return `assets/reactions/${emoji}.png`
   }
   reactPost(emoji:string) {
     this.reactService.addOrUpdate(emoji,this.userId,this.itemId).subscribe({})
+    if (this.userReaction) {
+      this.reactService.getReactById(this.userReaction.id).subscribe((result: React) => {
+        this.userReaction = result;
+      });
+    } else {
+      this.reactService.addOrUpdate(emoji,this.userId,this.itemId).subscribe((result: React) => {
+        this.userReaction = result;
+      });
+    }
   }
 
 }

@@ -1,5 +1,4 @@
 <div class="wrapper" (mouseenter)="toggleShow(true)" (mouseleave)="toggleShow(false)">
-
     <div class="emojis" *ngIf="showEmojis">
       <span *ngFor="let emoji of emojiList; index as i;">
         <img [src]="emojiPath(emoji)" width='75px' (click)="reactPost(emoji)">
@@ -8,17 +7,7 @@
     <span class="like"  [class.liked]="userReaction != null">
         Like
     </span>
-
     <span *ngIf="userReaction">
       | You reacted <img [src]="emojiPath(userReaction.reaction)">
-    </span>    
-
-    <!-- <div class="reactions">
-      <div *ngFor="let emoji of emojiList; index as i;" class="reaction-counts">
-        <span *ngIf="hasReactions(i)">
-          <img [src]="emojiPath(emoji)"> {{ reactionCount[i] }}
-        </span>
-      </div>
-    </div> -->
-    
+    </span>
 </div>

@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { React } from '../model/React';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import * as _ from "lodash";
 
 
 
@@ -20,8 +18,6 @@ export class ReactService {
   addOrUpdate(react: string, idUser: number, idPost: number): Observable<React> {
     return this.http.post<React>(`${this.baseUrl}/addOrUpdate/${react}/${idUser}/${idPost}`,React);
   }
-
-
   getPostReacts(idPost: number): Observable<React> {
     return this.http.get<React>(`${this.baseUrl}/get/${idPost}`);
   }
@@ -34,15 +30,8 @@ export class ReactService {
   userReactions(idUser: number, idPost: number): Observable<React> {
     return this.http.get<React>(`${this.baseUrl}/userReactions/${idUser}/${idPost}`);
   }
-
-
-
-  
-  countReactions(reactions: Array<any>) {
-    return _.mapValues(_.groupBy(reactions), 'length')
-  }
-  userReaction(reactions: Array<any>,userId:number) {
-    return _.get(reactions, userId)
+  getReactById(idReact: number): Observable<React> {
+    return this.http.get<React>(`${this.baseUrl}/get/${idReact}`);
   }
 
 }
