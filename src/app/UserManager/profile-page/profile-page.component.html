@@ -1,0 +1,68 @@
+<div class="row ">
+  <div class="card col-md-4 text-center ms-5 mt-3 me-3">
+    <div class="col  me-3">
+      <div class="mb-3 mt-3">
+        <img src="favicon.ico" class="rounded-circle" width="200px" height="200px" />
+      </div>
+      <div class="mb-3" >
+        <h2>Nom Prénom</h2>
+        <small class="form-text text-muted">Adresse, ville, codePostal</small>
+      </div>
+      <div class="col mb-3">
+        <button type="button" class="btn btn-primary me-3" >
+          <i class="fas fa-pencil-alt"></i>&nbsp; Modifier le profil
+        </button>
+        <a type="button" class="btn btn-info" [routerLink]="['/simplePage/changePassword']" >
+          <i class="fas fa-lock"></i>&nbsp; Changer le mot de passe
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class=" card col-md-7 ms-3 mt-3">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table">
+          <tbody>
+          <tr>
+            <th scope="row">Nom Complet</th>
+            <td>Nom et PRenom</td>
+          </tr>
+          <tr>
+            <th scope="row">Email</th>
+            <td>address email</td>
+          </tr>
+          <tr>
+            <th scope="row">Address complet</th>
+            <td>Address</td>
+          </tr>
+          <tr>
+            <th scope="row">Identifiant</th>
+            <td>Address</td>
+          </tr><tr>
+            <th scope="row">Nci</th>
+            <td>nci</td>
+          </tr>
+          <tr>
+            <th scope="row">BirthDate</th>
+            <td>birthdate</td>
+          </tr>
+          <tr>
+            <th  scope="row">Roles</th>
+            <td >roles</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

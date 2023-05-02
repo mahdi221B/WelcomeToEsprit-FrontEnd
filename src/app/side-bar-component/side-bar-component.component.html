@@ -6,7 +6,21 @@
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
-
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['users']">
+        <i class="fa-solid fa-users"></i>
+        <span class="menu-title">Users</span>
+        <i class="menu-arrow"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['roles']">
+        <i class="fa-solid fa-users"></i>
+        <span class="menu-title">Roles</span>
+        <i class="menu-arrow"></i>
+      </a>
+    </li>
+    <!--<app-user-menu></app-user-menu>-->
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse"  aria-expanded="false" aria-controls="ui-basic"routerLink="/ads">
         <i class="icon-layout menu-icon"></i>

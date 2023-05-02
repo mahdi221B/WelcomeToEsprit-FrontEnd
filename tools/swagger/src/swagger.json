@@ -1,0 +1,709 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Swagger Api Documentation for WelcomeToEsprit application",
+    "version" : "0.0.1-SNAPSHOT",
+    "title" : "Swagger Api Documentation for WelcomeToEsprit application",
+    "contact" : {
+      "name" : "Sourouga Coulibaly",
+      "url" : "https://github.com/mahdi221B/WelcomeToEsprit.git",
+      "email" : "sourougcoulibaly@gmail.com"
+    }
+  },
+  "basePath" : "http://localhost:8091",
+  "tags" : [ {
+    "name" : "WelcomeToEspritv1accountRegistration"
+  }, {
+    "name" : "WelcomeToEspritv1auth"
+  }, {
+    "name" : "WelcomeToEspritv1pictures"
+  }, {
+    "name" : "WelcomeToEspritv1qrcodeGen"
+  }, {
+    "name" : "WelcomeToEspritv1roles"
+  }, {
+    "name" : "WelcomeToEspritv1users"
+  } ],
+  "paths" : {
+    "/WelcomeToEsprit/v1/activation" : {
+      "get" : {
+        "tags" : [ "WelcomeToEspritv1accountRegistration" ],
+        "summary" : "Activation d'un user",
+        "description" : "Cette methode permet d'activer un user par son mail",
+        "operationId" : "activation",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "token",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Ce compte est activé",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "400" : {
+            "description" : "Ce compte est inactif"
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/authenticate" : {
+      "post" : {
+        "tags" : [ "WelcomeToEspritv1auth" ],
+        "summary" : "Se connecter",
+        "description" : "Cette methode permet à un user de se connecter",
+        "operationId" : "authenticate",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AuthenticationRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "L'utilisateur est connecté ",
+            "schema" : {
+              "$ref" : "#/definitions/AuthentificationResponse"
+            }
+          },
+          "400" : {
+            "description" : "L'utilisateur n'est pas connecté"
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/pictures/upload/{idUser}" : {
+      "post" : {
+        "tags" : [ "WelcomeToEspritv1pictures" ],
+        "summary" : "Ajouter une photo à un user",
+        "description" : "Cette methode permet d'ajouter une photo à un user par son ID",
+        "operationId" : "uploadPicture",
+        "parameters" : [ {
+          "name" : "file",
+          "in" : "query",
+          "required" : true
+        }, {
+          "name" : "idUser",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "L'utilisateur  a désormais une photo",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/qrcode" : {
+      "get" : {
+        "tags" : [ "WelcomeToEspritv1qrcodeGen" ],
+        "summary" : "Générer un qrcode",
+        "description" : "Cette methode permet de générer un qrcode par l'identifiant de l'utilisateur",
+        "operationId" : "generateQrcode",
+        "parameters" : [ {
+          "name" : "identifier",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Le qrcode est générer"
+          },
+          "400" : {
+            "description" : "Oops! une erreur c'est produite!"
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/register" : {
+      "post" : {
+        "tags" : [ "WelcomeToEspritv1accountRegistration" ],
+        "summary" : "Enregistrer un nouveau user",
+        "description" : "Cette methode permet d'enregistrer  un user",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/User"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "L'objet user est crée / modifié ",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          },
+          "400" : {
+            "description" : "L'objet user n'est pas valide"
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/roles/all" : {
+      "get" : {
+        "tags" : [ "WelcomeToEspritv1roles" ],
+        "summary" : "Renvoi la listes des roles",
+        "description" : "Cette methode permet de renvoyer la liste des roles qui existent dans BDD",
+        "operationId" : "retrieveAllRoles",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "La liste des roles / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Role"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/roles/byUser/{firstname}/{lastname}" : {
+      "get" : {
+        "tags" : [ "WelcomeToEspritv1roles" ],
+        "summary" : "Renvoi la listes des roles",
+        "description" : "Cette methode permet de renvoyer la liste des roles d'un user par son nom et prénom",
+        "operationId" : "retrieveAllRolesByUserFullName",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "firstname",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "lastname",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "La liste des roles / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Role"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/roles/create" : {
+      "post" : {
+        "tags" : [ "WelcomeToEspritv1roles" ],
+        "summary" : "Enregistrer un nouveau role",
+        "description" : "Cette methode permet d'enregistrer  un role",
+        "operationId" : "addRole",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Role"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "L'objet role est crée / modifié ",
+            "schema" : {
+              "$ref" : "#/definitions/Role"
+            }
+          },
+          "400" : {
+            "description" : "L'objet role n'est pas valide"
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/roles/deleteRole/{idRole}" : {
+      "delete" : {
+        "tags" : [ "WelcomeToEspritv1roles" ],
+        "summary" : "supprimer un role",
+        "description" : "Cette methode permet de supprimer un role par son ID",
+        "operationId" : "deleteRole",
+        "parameters" : [ {
+          "name" : "idRole",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Le role  a été supprimé",
+            "schema" : {
+              "$ref" : "#/definitions/Role"
+            }
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/roles/retrieveByName/{roleName}" : {
+      "get" : {
+        "tags" : [ "WelcomeToEspritv1roles" ],
+        "summary" : "Rechercher un role",
+        "description" : "Cette methode permet de rechercher un user par son nom",
+        "operationId" : "retrieveRoleByRoleName",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "roleName",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Le role  a été trouvé",
+            "schema" : {
+              "$ref" : "#/definitions/Role"
+            }
+          },
+          "400" : {
+            "description" : "Aucun role n'existe dans la BDD avec le fullName fourni"
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/roles/update" : {
+      "put" : {
+        "tags" : [ "WelcomeToEspritv1roles" ],
+        "summary" : "Modifier un nouveau role",
+        "description" : "Cette methode permet de modifier  un role",
+        "operationId" : "updateRole",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Role"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "L'objet role est crée / modifié ",
+            "schema" : {
+              "$ref" : "#/definitions/Role"
+            }
+          },
+          "400" : {
+            "description" : "L'objet role n'est pas valide"
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/users/all" : {
+      "get" : {
+        "tags" : [ "WelcomeToEspritv1users" ],
+        "summary" : "Renvoi la listes des users",
+        "description" : "Cette methode permet de renvoyer la liste des users qui existent dans BDD",
+        "operationId" : "retrieveAllUsers",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "La liste des users / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/User"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/users/assignRole/{idRole}/{idUser}" : {
+      "put" : {
+        "tags" : [ "WelcomeToEspritv1users" ],
+        "summary" : "assigner un rôle à un user",
+        "description" : "Cette methode permet d'assigner un role à un user",
+        "operationId" : "assignRoleToUser",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idRole",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "idUser",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "le role a été assigner à l'utilisateur avec succès",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/users/byRoleName/{roleName}" : {
+      "get" : {
+        "tags" : [ "WelcomeToEspritv1users" ],
+        "summary" : "Rechercher des users par le nom de leur rôle",
+        "description" : "Cette methode permet de rechercher des users par leur role",
+        "operationId" : "retrieveAllUsersByRoleName",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "roleName",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "La liste des users / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/User"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/users/changePassword" : {
+      "put" : {
+        "tags" : [ "WelcomeToEspritv1users" ],
+        "summary" : "Modifier le password d'un user",
+        "description" : "Cette methode permet de modifier le password d'un user",
+        "operationId" : "changePassword",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/ChangePasswordEntity"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Le password a été modifié",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/users/create" : {
+      "post" : {
+        "tags" : [ "WelcomeToEspritv1users" ],
+        "summary" : "Enregistrer un nouveau user",
+        "description" : "Cette methode permet d'enregistrer  un user",
+        "operationId" : "addUser",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/User"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "L'objet user est crée / modifié ",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          },
+          "400" : {
+            "description" : "L'objet user n'est pas valide"
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/users/delete/{idUser}" : {
+      "delete" : {
+        "tags" : [ "WelcomeToEspritv1users" ],
+        "summary" : "supprimer un user",
+        "description" : "Cette methode permet de supprimer un user par son ID",
+        "operationId" : "deleteUser",
+        "parameters" : [ {
+          "name" : "idUser",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "L'utilisateur  a été supprimé",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/users/research/{idUser}" : {
+      "get" : {
+        "tags" : [ "WelcomeToEspritv1users" ],
+        "summary" : "Rechercher un user",
+        "description" : "Cette methode permet de rechercher un user par son id",
+        "operationId" : "retrieveUserById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idUser",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "L'utilisateur  a été trouvé",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          },
+          "400" : {
+            "description" : "Aucun user n'existe dans la BDD avec l'id fourni"
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/users/retrieveByFullName/{firstname}/{lastname}" : {
+      "get" : {
+        "tags" : [ "WelcomeToEspritv1users" ],
+        "summary" : "Rechercher un user",
+        "description" : "Cette methode permet de rechercher un user par son fullName",
+        "operationId" : "retrieveUserByFullName",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "firstname",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "lastname",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "L'utilisateur  a été trouvé",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          },
+          "400" : {
+            "description" : "Aucun user n'existe dans la BDD avec le fullName fourni"
+          }
+        }
+      }
+    },
+    "/WelcomeToEsprit/v1/users/update" : {
+      "put" : {
+        "tags" : [ "WelcomeToEspritv1users" ],
+        "summary" : "Modifier un nouveau user",
+        "description" : "Cette methode permet de modifier  un user",
+        "operationId" : "updateUser",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/User"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "L'objet user est crée / modifié ",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          },
+          "400" : {
+            "description" : "L'objet user n'est pas valide"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Address" : {
+      "type" : "object",
+      "properties" : {
+        "address1" : {
+          "type" : "string"
+        },
+        "address2" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "codePostal" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AuthenticationRequest" : {
+      "type" : "object",
+      "properties" : {
+        "login" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AuthentificationResponse" : {
+      "type" : "object",
+      "properties" : {
+        "accessToken" : {
+          "type" : "string"
+        },
+        "roles" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/SimpleGrantedAuthority"
+          }
+        }
+      }
+    },
+    "ChangePasswordEntity" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "currentPassword" : {
+          "type" : "string"
+        },
+        "newPassword" : {
+          "type" : "string"
+        },
+        "confirmNewPassword" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Picture" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "filename" : {
+          "type" : "string"
+        },
+        "filePath" : {
+          "type" : "string"
+        },
+        "user" : {
+          "$ref" : "#/definitions/User"
+        }
+      }
+    },
+    "Role" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "roleName" : {
+          "type" : "string"
+        },
+        "users" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/User"
+          }
+        }
+      }
+    },
+    "SimpleGrantedAuthority" : {
+      "type" : "object",
+      "properties" : {
+        "authority" : {
+          "type" : "string"
+        }
+      }
+    },
+    "User" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "emailAddress" : {
+          "type" : "string"
+        },
+        "nci" : {
+          "type" : "string"
+        },
+        "birthDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "password" : {
+          "type" : "string"
+        },
+        "address" : {
+          "$ref" : "#/definitions/Address"
+        },
+        "active" : {
+          "type" : "boolean"
+        },
+        "roles" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Role"
+          }
+        },
+        "picture" : {
+          "$ref" : "#/definitions/Picture"
+        }
+      }
+    }
+  }
+}

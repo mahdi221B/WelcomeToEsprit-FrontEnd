@@ -1,0 +1,62 @@
+<div class="container my-container">
+  <div class="card justify-content-md-center">
+    <div class="card-header text-center">
+      <h3>S'inscrire</h3>
+    </div>
+    <div class="card-body">
+      <form #f="ngForm" class="">
+
+        <div class="mb-3">
+          <input type="text" class="form-control"  placeholder="First-Name" >
+        </div>
+
+        <div class="mb-3">
+          <input type="text" class="form-control"  placeholder="Last-Name">
+        </div>
+
+        <div class="mb-3">
+          <input type="text" class="form-control"  placeholder="Nci">
+        </div>
+
+        <div class="mb-3">
+          <input type="date" class="form-control"  placeholder="Birth-Date" >
+        </div>
+
+        <div class="mb-3">
+          <input type="text" class="form-control"  placeholder="Address-1" >
+        </div>
+
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Address-2" >
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="City"  >
+        </div>
+
+        <div class="mb-3">
+          <input type="text" class="form-control"  placeholder="Country" >
+        </div>
+
+        <div class="mb-3">
+          <input type="number" class="form-control"  placeholder="Postal-Code"  >
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control"  placeholder="your-address-email"  >
+        </div>
+
+        <div class="mb-3">
+          <input type="password" class="form-control"  placeholder="Entry a password">
+        </div>
+
+        <div class="mb-3 d-flex justify-content-between">
+          <a [routerLink]="['/login']" class="btn btn-link">Se connecter</a>
+          <button type="button" class="btn btn-primary" >
+            <i class="fa-solid fa-check"></i> &nbsp;S'inscrire
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,15 @@
+<li class="nav-item" *ngFor="let menu of propertiesMenu">
+    <a class="nav-link" data-toggle="collapse" href="#auth{{menu.id}}" aria-expanded="false" aria-controls="auth">
+      <i class="{{menu.icon}}"></i>&nbsp;{{menu.title}}
+      <i class="menu-arrow"></i>
+    </a>
+  <div class="collapse" id="auth{{menu.id}}">
+    <ul class="nav flex-column">
+      <li class="nav-item" *ngFor="let sousMenu of menu.sousMenu">
+        <a class="nav-link" [routerLink]="[sousMenu.url]">
+          <i class="{{sousMenu.icon}}"></i>&nbsp;{{sousMenu.title}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>

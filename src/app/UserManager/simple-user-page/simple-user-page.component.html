@@ -1,0 +1,35 @@
+<div class="main-container">
+  <div class="row min-height-600 no-flex-wrap">
+    <div class="card col-md-2 me-2" >
+      <div class="col ps-0 pe-0">
+        <div class="card mt-3 mb-2 border-none">
+          <!--<h5>Welcome To Esprit V1.0</h5>-->
+          <a class=""  [routerLink]="['/dashboard']" >
+            <img style="width: 90px!important; height: 50px!important;" src="assets/images/Logo_ESPRIT_Ariana-transformed.jpeg" class="mr-2" alt="logo"/>&nbsp;
+            <img style="width: 45px!important; height: 50px!important;" src="assets/images/Red_triangle.svg.png" alt="logo"/>
+          </a>
+        </div>
+        <div>
+          <app-menu-simple-page></app-menu-simple-page>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-md-10 ps-0 pe-0 background-grey border-none">
+      <div class="col ps-0 pe-0 d-flex flex-column justify-content-between">
+        <div class="card p-3 min-height-80">
+          <app-header-simple-page></app-header-simple-page>
+        </div>
+        <div class="card mt-2 mb-2 min-height-440">
+          <router-outlet></router-outlet>
+        </div>
+        <div class="card min-height-80">
+          footer
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
