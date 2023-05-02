@@ -1,13 +1,5 @@
 <!-- <button (click)="redirecttoform()" >to form</button> -->
-<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter2"  >
-  addJob
- </button>
 
-<button type="button" class="btn btn-info" (click)="displayCondidat()" >Dispaly condidats</button>
-
-<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter4" (click)="getstatistique()"   >
-  statistiques
- </button>
 
 
 
@@ -18,7 +10,18 @@
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <p class="card-title">Advanced Table</p>
+          <div class="card-body d-flex align-items-center">
+            <p class="card-title flex-grow-1">Advanced Table</p>
+            <button type="button" class="btn btn-info my-btn" (click)="displayCondidat()">Display candidates</button>
+
+            <button type="button" class="btn btn-info my-btn" data-toggle="modal" data-target="#exampleModalCenter4" (click)="getstatistique()">
+             statistics
+            </button>
+
+            <button type="button" class="btn btn-primary my-btn" data-toggle="modal" data-target="#exampleModalCenter2">
+              addJob
+            </button>
+          </div>
           <div class="row">
             <div class="col-12">
               <div class="table-responsive">
@@ -44,7 +47,7 @@
                     <td>{{offer.location}}</td>
                     <td>{{offer.date_limite}}</td>
                     <td>
-                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter3" (click)="getId(offer.idOffre)" >
+                      <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter3" (click)="getId(offer.idOffre)" >
                         Show candidats
                        </button>
                       <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter" (click)="getId(offer.idOffre)" >
@@ -53,7 +56,17 @@
                       <button type="button" class="btn btn-danger"  (click)="deleteOffre(offer.idOffre)" >
                         Delete
                        </button>
-                       
+                        -->
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter3" (click)="getId(offer.idOffre)" style="margin-right: 10px;">
+                          Show candidats
+                        </button>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter" (click)="getId(offer.idOffre)" style="margin-right: 10px;">
+                          Edit
+                        </button>
+                        <button type="button" class="btn btn-danger" (click)="deleteOffre(offer.idOffre)">
+                          Delete
+                        </button>
+                        
 
   
                     </td>

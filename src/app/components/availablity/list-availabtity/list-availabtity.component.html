@@ -4,7 +4,7 @@
     <div class="card">
       <div class="card-body d-flex align-items-center">
         <p class="card-title flex-grow-1">Aviaalabitlty Table</p>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter2" (click)="addOffre"  >
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2" (click)="addOffre"  >
           Add
          </button>
       </div>
@@ -26,7 +26,7 @@
                 <td>{{c.date_debut_diso | date:'yyyy-MM-dd' }}</td>
                 <td>{{c.date_fin_diso | date:'yyyy-MM-dd' }}</td>
 
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter" (click)="getId(c.idDisbo)" >
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter" (click)="getId(c.idDisbo) " style="margin-right: 10px;">
                   Edit
                  </button>
                  <button type="button" class="btn btn-danger" (click)="deleteAvailability(c.idDisbo)"  >
