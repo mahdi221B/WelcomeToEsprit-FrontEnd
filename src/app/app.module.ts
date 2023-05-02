@@ -24,6 +24,8 @@ import { AddQuestionComponent } from './components/questions/add-question/add-qu
 import { AnswerComponent } from './components/answers/answer/answer.component';
 import { AddAnswerComponent } from './components/answers/add-answer/add-answer.component';
 import { UpdateAnswerComponent } from './components/answers/update-answer/update-answer.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { ReclamationCalanderComponent } from './components/reclamations/reclamation-calander/reclamation-calander.component';
 
 
 
@@ -52,6 +54,7 @@ import { UpdateAnswerComponent } from './components/answers/update-answer/update
     AnswerComponent,
     AddAnswerComponent,
     UpdateAnswerComponent,
+    ReclamationCalanderComponent,
 
     
   ],
@@ -61,6 +64,7 @@ import { UpdateAnswerComponent } from './components/answers/update-answer/update
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
+    EditorModule
    
   ],
   providers: [],

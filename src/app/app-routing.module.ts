@@ -15,6 +15,7 @@ import { UpdateQuestionComponent } from './components/questions/update-question/
 import { AnswerComponent } from './components/answers/answer/answer.component';
 import { AddAnswerComponent } from './components/answers/add-answer/add-answer.component';
 import { UpdateAnswerComponent } from './components/answers/update-answer/update-answer.component';
+import { ReclamationCalanderComponent } from './components/reclamations/reclamation-calander/reclamation-calander.component';
 
 
 const routes: Routes = [
@@ -24,8 +25,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashborad', pathMatch: 'full' },
       { path: 'dashborad', component: DashboardComponentComponent },
-
-
+  
       { path: 'reclamation', component: ReclamationComponent },
       { path: 'reclamation/add', component: AddReclamationComponent },
       { path: 'reclamation/update/:id', component: UpdateReclamationComponent },
@@ -39,12 +39,14 @@ const routes: Routes = [
       { path: 'answer', component: AnswerComponent },
       { path: 'answer/add', component: AddAnswerComponent },
       { path: 'answer/update/:id', component: UpdateAnswerComponent },
+    
      
      
 
       
     ]
   },
+  { path: 'calender', component: ReclamationCalanderComponent },
   { path: '**', component: NotFoundComponent }
 ];
 //
