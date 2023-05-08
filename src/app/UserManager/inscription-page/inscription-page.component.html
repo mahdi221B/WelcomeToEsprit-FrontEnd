@@ -4,57 +4,57 @@
       <h3>S'inscrire</h3>
     </div>
     <div class="card-body">
-      <form #f="ngForm" class="">
-
+        <div class="alert alert-danger" *ngIf="errorMsg">
+          {{errorMsg}}
+        </div>
         <div class="mb-3">
-          <input type="text" class="form-control"  placeholder="First-Name" >
+          <input type="text" class="form-control"  placeholder="First-Name" [(ngModel)]="user.firstName">
         </div>
 
         <div class="mb-3">
-          <input type="text" class="form-control"  placeholder="Last-Name">
+          <input type="text" class="form-control"  placeholder="Last-Name" [(ngModel)]="user.lastName">
         </div>
 
         <div class="mb-3">
-          <input type="text" class="form-control"  placeholder="Nci">
+          <input type="text" class="form-control"  placeholder="Nci" [(ngModel)]="user.nci">
         </div>
 
         <div class="mb-3">
-          <input type="date" class="form-control"  placeholder="Birth-Date" >
+          <input type="date" class="form-control"  placeholder="Birth-Date" [(ngModel)]="user.birthDate">
         </div>
 
         <div class="mb-3">
-          <input type="text" class="form-control"  placeholder="Address-1" >
+          <input type="text" class="form-control"  placeholder="Address-1" [(ngModel)]="address.address1">
         </div>
 
         <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Address-2" >
+          <input type="text" class="form-control" placeholder="Address-2" [(ngModel)]="address.address2" >
         </div>
         <div class="mb-3">
-          <input type="text" class="form-control" placeholder="City"  >
-        </div>
-
-        <div class="mb-3">
-          <input type="text" class="form-control"  placeholder="Country" >
+          <input type="text" class="form-control" placeholder="City" [(ngModel)]="address.city" >
         </div>
 
         <div class="mb-3">
-          <input type="number" class="form-control"  placeholder="Postal-Code"  >
-        </div>
-        <div class="mb-3">
-          <input type="email" class="form-control"  placeholder="your-address-email"  >
+          <input type="text" class="form-control"  placeholder="Country" [(ngModel)]="address.country">
         </div>
 
         <div class="mb-3">
-          <input type="password" class="form-control"  placeholder="Entry a password">
+          <input type="number" class="form-control"  placeholder="Postal-Code" [(ngModel)]="address.codePostal" >
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control"  placeholder="your-address-email" [(ngModel)]="user.emailAddress" >
+        </div>
+
+        <div class="mb-3">
+          <input type="password" class="form-control"  placeholder="Entry a password" [(ngModel)]="user.password">
         </div>
 
         <div class="mb-3 d-flex justify-content-between">
           <a [routerLink]="['/login']" class="btn btn-link">Se connecter</a>
-          <button type="button" class="btn btn-primary" >
+          <button type="button" class="btn btn-primary" (click)="inscrire()">
             <i class="fa-solid fa-check"></i> &nbsp;S'inscrire
           </button>
         </div>
-      </form>
     </div>
 
   </div>

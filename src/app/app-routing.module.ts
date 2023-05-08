@@ -14,35 +14,78 @@ import {ChangePasswordPageComponent} from "./UserManager/change-password-page/ch
 import {ListUserPageComponent} from "./UserManager/list-user-page/list-user-page.component";
 import {ListRolePageComponent} from "./UserManager/list-role-page/list-role-page.component";
 import {AddRolePageComponent} from "./UserManager/add-role-page/add-role-page.component";
+import {AppGuardService} from "./UserManager/services/guard/app-guard.service";
 
 
 const routes: Routes = [
   //{ path: '', redirectTo: 'home', pathMatch: 'full' },
-  {path:'home',component:HomeComponentComponent,
+  {
+    path:'home',
+    component:HomeComponentComponent,
+    canActivate:[AppGuardService],
     children:[
       {
-        path: 'users',component: ListUserPageComponent
+        path: 'users',
+        component: ListUserPageComponent,
+        canActivate:[AppGuardService]
       },
       {
-        path: 'roles',component: ListRolePageComponent
+        path: 'roles',
+        component: ListRolePageComponent,
+        canActivate:[AppGuardService]
       },
       {
-        path: 'addRole',component: AddRolePageComponent
+        path: 'addRole',
+        component: AddRolePageComponent,
+        canActivate:[AppGuardService]
       },
       {
-        path: 'modify',component: UpdateUserComponent
+        path: 'modify',
+        component: UpdateUserComponent,
+        canActivate:[AppGuardService]
+      },
+      {
+        path: 'modify/:idUser',
+        component: UpdateUserComponent,
+        canActivate:[AppGuardService]
       }
     ]
   },
-  { path: 'dashboard', component: DashboardComponentComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponentComponent,
+    canActivate:[AppGuardService]
+  },
   //{ path: '**', component: NotFoundComponent },
-  {path:'accueil', component:AcceuilPageComponent},
-  {path:'simplePage',
+  {
+    path:'accueil',
+    component:AcceuilPageComponent,
+  },
+  {
+    path:'simplePage',
     component:SimpleUserPageComponent,
+    canActivate:[AppGuardService],
     children:[
-      {path:'details',component:UpdateUserComponent},
-      {path:'profil',component:ProfilePageComponent},
-      {path:'changePassword',component:ChangePasswordPageComponent}
+      {
+        path:'details',
+        component:UpdateUserComponent,
+        canActivate:[AppGuardService]
+      },
+      {
+        path:'details',
+        component:UpdateUserComponent,
+        canActivate:[AppGuardService]
+      },
+      {
+        path:'profil',
+        component:ProfilePageComponent,
+        canActivate:[AppGuardService]
+      },
+      {
+        path:'changePassword',
+        component:ChangePasswordPageComponent,
+        canActivate:[AppGuardService]
+      }
     ]
   },
       {path:'login',
@@ -52,11 +95,14 @@ const routes: Routes = [
         component:InscriptionPageComponent
       },
 
-  { path: 'ads',component:AdvertisementComponent},
+  {
+    path: 'ads',
+    component:AdvertisementComponent,
+    canActivate:[AppGuardService]
+  },
 
-  //{path: 'simpleUserProfil',component: UserProfilPageComponent}
 ];
-//
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

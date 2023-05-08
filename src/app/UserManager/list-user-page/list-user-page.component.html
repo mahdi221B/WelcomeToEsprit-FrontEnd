@@ -9,10 +9,12 @@
   </div>
 
   <div class="col m-3">
-    <app-user-detail></app-user-detail>
-    <app-user-detail></app-user-detail>
-    <app-user-detail></app-user-detail>
-    <app-user-detail></app-user-detail>
+    <app-user-detail
+      *ngFor="let article of listUsers"
+      [userDetail]="article">
+
+    </app-user-detail>
+
   </div>
 
   <div class="row mb-2">

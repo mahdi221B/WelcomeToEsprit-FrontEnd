@@ -8,7 +8,7 @@ import { NavBarComponentComponent } from './nav-bar-component/nav-bar-component.
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { DashboardComponentComponent } from './dashboard-component/dashboard-component.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AdvertisementComponent } from './advertisement/advertisement.component';
 import { FooterComponent } from './footer/footer.component';
@@ -29,6 +29,7 @@ import { ButtonActionComponent } from './UserManager/button-action/button-action
 import { ListRolePageComponent } from './UserManager/list-role-page/list-role-page.component';
 import { RoleDetailComponent } from './UserManager/role-detail/role-detail.component';
 import { AddRolePageComponent } from './UserManager/add-role-page/add-role-page.component';
+
 
 @NgModule({
   declarations: [
@@ -64,7 +65,13 @@ import { AddRolePageComponent } from './UserManager/add-role-page/add-role-page.
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    /**{
+      provide:HTTP_INTERCEPTORS,
+      useClass:IntercepteurService,
+      multi:true
+    }**/
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
